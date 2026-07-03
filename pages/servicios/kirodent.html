@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KIROSPA - Baño y Grooming Canino</title>
-<meta name="description" content="Kiro Spa ofrece baño, grooming y bienestar para perros con una experiencia limpia, suave y profesional.">
-<link rel="icon" href="img/kirologoqueda.jpg" type="image/jpeg">
+<title>KIRODENT - Higiene Dental Para Mascotas</title>
+<meta name="description" content="Kiro Dent ofrece higiene dental preventiva, evaluacion oral y cuidado profesional para perros y gatos.">
+<link rel="icon" href="assets/img/kirologoqueda.jpg" type="image/jpeg">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -67,11 +67,11 @@ nav {
 
 .hero {
   min-height: calc(100vh - 70px);
-  margin-top: 70px;
   background: var(--navy-dark);
   display: grid; grid-template-columns: 1fr 1fr;
   align-items: start;
   position: relative; overflow: hidden;
+  margin-top: 70px;
   padding: 10px 0 18px;
 }
 
@@ -131,7 +131,7 @@ nav {
   font-size: 1rem;
   color: rgba(255,255,255,0.55);
   line-height: 1.7;
-  max-width: 490px;
+  max-width: 460px;
   margin-bottom: 1.15rem;
   font-weight: 300;
 }
@@ -178,15 +178,11 @@ nav {
   overflow: visible;
 }
 
-.hero-visual {
-  width: min(100%, 390px);
-  max-width: 390px;
-  position: relative;
-}
+.hero-visual { width: min(100%, 390px); max-width: 390px; position: relative; }
 
 .hero-img-frame {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3/4;
   max-height: calc(100vh - 155px);
   border-radius: 28px 28px 0 0;
   background: linear-gradient(160deg, #143862 0%, #1f5287 50%, #0a2a55 100%);
@@ -208,24 +204,17 @@ nav {
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 16px;
   padding: 14px 18px;
-
   z-index: 3;
 }
 
-.float-card.top-right {
-  top: 18px;
-  right: -14px;
-}
-.fc-icon { font-size: 1.3rem; margin-bottom: 0px; }
+.float-card.top-right { top: 18px; right: -14px; }
+.fc-icon { font-size: 1.3rem; margin-bottom: 4px; }
 .fc-label { font-size: 0.65rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; }
 .fc-val { font-weight: 700; font-size: 0.9rem; color: white; margin-top: 1px; }
 
 .float-card.bottom-left {
-  bottom: 14px;
-  left: -14px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  bottom: 14px; left: -14px;
+  display: flex; align-items: center; gap: 12px;
 }
 .fc-num { font-size: 2rem; font-weight: 800; color: var(--orange); line-height: 1; }
 .fc-text .top { font-size: 0.7rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.07em; }
@@ -513,7 +502,6 @@ footer {
 
 @media (max-width: 1080px) {
   .hero { grid-template-columns: 1fr; }
-  .hero { margin-top: 70px; }
   .hero-left { padding: 18px 8% 12px; }
   .hero-right { padding: 0 8% 18px; }
   .srv-grid { grid-template-columns: repeat(2, 1fr); }
@@ -527,7 +515,7 @@ footer {
   nav { padding: 0 5%; }
   .nav-links { display: none; }
   .logo-copy .sub { display: none; }
-  .hero-h1 { font-size: clamp(2.05rem, 9vw, 2.85rem); }
+  .hero-h1 { font-size: clamp(2.2rem, 11vw, 3.2rem); }
   .hero-badges { flex-wrap: wrap; gap: 1rem; }
   .srv-grid, .ben-grid { grid-template-columns: 1fr; }
   .hero-right { padding: 0 5% 18px; }
@@ -543,7 +531,6 @@ footer {
   .hero { margin-top: 70px; padding: 6px 0 14px; }
   .hero-left { padding: 10px 6% 14px; }
   .hero-right { padding: 0 6% 16px; }
-  .hero-h1 { max-width: none; }
   .hero-ctas, .cta-actions { width: 100%; }
   .btn-orange, .btn-ghost, .btn-wa, .btn-call { width: 100%; justify-content: center; }
   .footer-main, .footer-bottom { grid-template-columns: 1fr; display: grid; gap: 1.5rem; }
@@ -556,21 +543,21 @@ footer {
 
 <nav>
   <a href="#inicio" class="logo">
-    <div class="logo-mark">KS</div>
+    <div class="logo-mark">KD</div>
     <div class="logo-copy">
-      <div class="name">KIROSPA</div>
-      <div class="sub">Baño y grooming canino</div>
+      <div class="name">KIRODENT</div>
+      <div class="sub">Higiene dental para mascotas</div>
     </div>
   </a>
 
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#como-funciona">Cómo funciona</a></li>
+    <li><a href="#como-funciona">Como funciona</a></li>
     <li><a href="#testimonios">Testimonios</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 
-  <a href="https://wa.me/51916566758?text=Hola%20Kiro%20Spa,%20quiero%20reservar%20mi%20cita" class="nav-wa" target="_blank" rel="noreferrer">
+  <a href="https://wa.me/51916566758?text=Hola%20Kiro%20Dent,%20quiero%20reservar%20mi%20evaluacion" class="nav-wa" target="_blank" rel="noreferrer">
     <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.07 0C5.56 0 .24 5.29.24 11.8c0 2.08.54 4.1 1.57 5.89L0 24l6.5-1.7a11.76 11.76 0 0 0 5.57 1.42h.01c6.51 0 11.83-5.29 11.83-11.8 0-3.16-1.23-6.12-3.39-8.44zM12.08 21.7h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.86 1.01 1.03-3.76-.24-.39a9.83 9.83 0 0 1-1.51-5.18c0-5.44 4.43-9.87 9.89-9.87 2.64 0 5.12 1.03 6.98 2.9a9.8 9.8 0 0 1 2.9 6.97c0 5.45-4.44 9.88-9.89 9.88zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.89-.79-1.49-1.76-1.67-2.06-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.37s-1.05 1.03-1.05 2.5 1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.13 4.54.72.31 1.28.5 1.72.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/></svg>
     <span>WhatsApp</span>
   </a>
@@ -583,23 +570,23 @@ footer {
 
   <div class="hero-left">
     <div class="hero-pills">
-      <span class="pill active">Higiene</span>
-      <span class="pill">Calma</span>
+      <span class="pill active">Prevencion</span>
       <span class="pill">Bienestar</span>
+      <span class="pill">Confianza</span>
     </div>
 
     <h1 class="hero-h1">
-      Baño y grooming<br>que lo dejan <em>limpio</em>,<br>cómodo y feliz
+      Higiene dental<br>que mejora su<br><em>bienestar</em> y su<br>rutina diaria
     </h1>
 
     <p class="hero-p">
-      Kiro Spa ofrece una experiencia de cuidado canino suave, profesional y pensada para que tu perro se vea bien, se sienta relajado y vuelva a casa con una sensación real de bienestar.
+      Kiro Dent ofrece evaluacion oral, higiene preventiva y orientacion clara para perros y gatos. Una experiencia profesional pensada para cuidar su boca con mas orden, comodidad y seguimiento.
     </p>
 
     <div class="hero-ctas">
-      <a href="https://wa.me/51916566758?text=Hola%20Kiro%20Spa,%20quiero%20reservar%20mi%20cita" class="btn-orange" target="_blank" rel="noreferrer">
+      <a href="https://wa.me/51916566758?text=Hola%20Kiro%20Dent,%20quiero%20reservar%20mi%20evaluacion" class="btn-orange" target="_blank" rel="noreferrer">
         <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.07 0C5.56 0 .24 5.29.24 11.8c0 2.08.54 4.1 1.57 5.89L0 24l6.5-1.7a11.76 11.76 0 0 0 5.57 1.42h.01c6.51 0 11.83-5.29 11.83-11.8 0-3.16-1.23-6.12-3.39-8.44zM12.08 21.7h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.86 1.01 1.03-3.76-.24-.39a9.83 9.83 0 0 1-1.51-5.18c0-5.44 4.43-9.87 9.89-9.87 2.64 0 5.12 1.03 6.98 2.9a9.8 9.8 0 0 1 2.9 6.97c0 5.45-4.44 9.88-9.89 9.88zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.89-.79-1.49-1.76-1.67-2.06-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.37s-1.05 1.03-1.05 2.5 1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.13 4.54.72.31 1.28.5 1.72.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/></svg>
-        Reserva tu cita
+        Reserva tu evaluacion
       </a>
       <a href="tel:+51916566758" class="btn-ghost">
         <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
@@ -609,16 +596,16 @@ footer {
 
     <div class="hero-badges">
       <div class="hero-badge-item">
-        <div class="badge-val">+Suave</div>
-        <div class="badge-lbl">Trato delicado</div>
+        <div class="badge-val">2</div>
+        <div class="badge-lbl">Perros y gatos</div>
       </div>
       <div class="hero-badge-item">
-        <div class="badge-val"><span>Baño</span></div>
-        <div class="badge-lbl">Y grooming profesional</div>
+        <div class="badge-val"><span>Oral</span></div>
+        <div class="badge-lbl">Cuidado preventivo</div>
       </div>
       <div class="hero-badge-item">
-        <div class="badge-val">1:1</div>
-        <div class="badge-lbl">Atencion cercana</div>
+        <div class="badge-val">+Claro</div>
+        <div class="badge-lbl">Orientacion simple</div>
       </div>
     </div>
   </div>
@@ -627,20 +614,20 @@ footer {
     <div class="hero-visual">
       <div class="float-card top-right">
         <div class="fc-icon">+</div>
-        <div class="fc-label">Experiencia</div>
-        <div class="fc-val">Limpia y relajante</div>
+        <div class="fc-label">Atencion</div>
+        <div class="fc-val">Preventiva y cercana</div>
       </div>
 
       <div class="hero-img-frame">
-        <img src="img/kiroservicios/KIROSPA.png" alt="Kiro Spa baño y grooming canino">
+        <img src="assets/img/kiroservicios/KIRODENT.png" alt="Kiro Dent higiene dental para mascotas">
       </div>
 
       <div class="float-card bottom-left">
-        <div class="fc-num">Spa</div>
+        <div class="fc-num">Dental</div>
         <div class="fc-text">
-          <div class="top">Resultado</div>
-          <div class="fc-val">Frescura y confort</div>
-          <div class="bot">para tu perro y tu familia</div>
+          <div class="top">Objetivo</div>
+          <div class="fc-val">Mas salud oral</div>
+          <div class="bot">y una boca mas comoda</div>
         </div>
       </div>
     </div>
@@ -650,51 +637,51 @@ footer {
 <section class="services sec reveal" id="servicios">
   <div class="srv-head">
     <div class="sec-label">Servicios</div>
-    <h2 class="sec-title">Cuidado canino pensado para limpiar, relajar y embellecer</h2>
-    <p>Una propuesta de spa que combina higiene, cuidado estetico y una experiencia mas tranquila para perros de distintas rutinas y necesidades.</p>
+    <h2 class="sec-title">Una propuesta pensada para ordenar el cuidado oral de tu mascota</h2>
+    <p>Desde la evaluacion inicial hasta la orientacion para casa, Kiro Dent busca que el proceso sea claro, preventivo y facil de sostener.</p>
   </div>
 
   <div class="srv-grid">
     <article class="srv-card">
       <div class="srv-num">01</div>
       <div>
-        <div class="srv-name">Baño canino</div>
-        <div class="srv-desc">Limpieza cuidadosa con una experiencia mas suave, comoda y adaptada al tipo de pelaje.</div>
+        <div class="srv-name">Evaluacion dental</div>
+        <div class="srv-desc">Revisamos la situacion oral de tu mascota y te explicamos con claridad que necesita y por que.</div>
       </div>
     </article>
     <article class="srv-card">
       <div class="srv-num">02</div>
       <div>
-        <div class="srv-name">Grooming y corte</div>
-        <div class="srv-desc">Acabado estetico con enfoque en orden, comodidad y una mejor presencia general.</div>
+        <div class="srv-name">Higiene preventiva</div>
+        <div class="srv-desc">Atencion enfocada en mejorar limpieza, comodidad oral y cuidado general de forma responsable.</div>
       </div>
     </article>
     <article class="srv-card">
       <div class="srv-num">03</div>
       <div>
-        <div class="srv-name">Cepillado y desenredo</div>
-        <div class="srv-desc">Ayuda a mantener el pelaje mas limpio, manejable y agradable para el dia a dia.</div>
+        <div class="srv-name">Revision oral general</div>
+        <div class="srv-desc">Buscamos señales de sarro, irritacion o desgaste para actuar con mayor anticipacion.</div>
       </div>
     </article>
     <article class="srv-card">
       <div class="srv-num">04</div>
       <div>
-        <div class="srv-name">Corte de unas</div>
-        <div class="srv-desc">Cuidado complementario para mejorar confort, movilidad y mantenimiento general.</div>
+        <div class="srv-name">Orientacion para casa</div>
+        <div class="srv-desc">Te compartimos recomendaciones practicas para continuar el cuidado oral desde tu rutina diaria.</div>
       </div>
     </article>
     <article class="srv-card">
       <div class="srv-num">05</div>
       <div>
-        <div class="srv-name">Hidratacion de pelaje</div>
-        <div class="srv-desc">Un servicio pensado para sumar suavidad, mejor textura y una sensación más agradable.</div>
+        <div class="srv-name">Atencion para perros y gatos</div>
+        <div class="srv-desc">Adaptamos la experiencia segun especie, edad y condicion general de cada mascota.</div>
       </div>
     </article>
     <article class="srv-card">
       <div class="srv-num">06</div>
       <div>
-        <div class="srv-name">Atencion personalizada</div>
-        <div class="srv-desc">Adaptamos la experiencia segun caracter, sensibilidad y rutina de cada perro.</div>
+        <div class="srv-name">Reserva simple por WhatsApp</div>
+        <div class="srv-desc">Agendas, resuelves dudas y entiendes el proceso sin friccion innecesaria.</div>
       </div>
     </article>
   </div>
@@ -704,31 +691,31 @@ footer {
   <div class="ben-head">
     <div>
       <div class="sec-label">Propuesta de valor</div>
-      <h2 class="sec-title light">Mas que estetica: una experiencia de bienestar real</h2>
+      <h2 class="sec-title light">Prevencion, claridad y bienestar oral en una sola experiencia</h2>
     </div>
-    <p>Kiro Spa busca que el cuidado no se sienta agresivo ni apresurado. La idea es combinar limpieza, calma y atencion responsable para que el resultado sea visible y tambien comodo.</p>
+    <p>Kiro Dent no busca solo una visita puntual. La idea es ayudarte a entender mejor el estado oral de tu mascota y sostener un cuidado mas ordenado, accesible y confiable.</p>
   </div>
 
   <div class="ben-grid">
     <article class="ben-card">
       <div class="ben-icon">01</div>
-      <div class="ben-title">Trato delicado</div>
-      <div class="ben-desc">La experiencia esta pensada para reducir tension y cuidar la comodidad de tu perro durante el servicio.</div>
+      <div class="ben-title">Mas claridad</div>
+      <div class="ben-desc">Explicamos el proceso y las necesidades reales de tu mascota con un lenguaje directo y entendible.</div>
     </article>
     <article class="ben-card">
       <div class="ben-icon">02</div>
-      <div class="ben-title">Higiene visible</div>
-      <div class="ben-desc">El resultado se refleja en un pelaje más limpio, una mejor sensación y una rutina más agradable.</div>
+      <div class="ben-title">Mejor aliento y limpieza</div>
+      <div class="ben-desc">Una higiene oral mas cuidada aporta comodidad y una convivencia mas agradable en casa.</div>
     </article>
     <article class="ben-card">
       <div class="ben-icon">03</div>
-      <div class="ben-title">Estetica cuidada</div>
-      <div class="ben-desc">Orden, presentacion y acabados pensados para respetar el estilo y necesidad de cada mascota.</div>
+      <div class="ben-title">Prevencion temprana</div>
+      <div class="ben-desc">Detectar señales a tiempo permite ordenar mejor el cuidado y evitar que el problema avance.</div>
     </article>
     <article class="ben-card">
       <div class="ben-icon">04</div>
-      <div class="ben-title">Confianza para la familia</div>
-      <div class="ben-desc">Comunicacion clara, reserva simple y una experiencia que transmite mas tranquilidad desde el inicio.</div>
+      <div class="ben-title">Seguimiento practico</div>
+      <div class="ben-desc">Te damos orientacion para que el cuidado no termine en una sola visita y se sostenga desde casa.</div>
     </article>
   </div>
 </section>
@@ -736,46 +723,46 @@ footer {
 <section class="how sec reveal" id="como-funciona">
   <div class="how-grid">
     <div>
-      <div class="sec-label">Cómo funciona</div>
-      <h2 class="sec-title">Un proceso claro para reservar, atender y entregar con calma</h2>
+      <div class="sec-label">Como funciona</div>
+      <h2 class="sec-title">Un proceso simple para evaluar, cuidar y orientar</h2>
 
       <div class="how-steps">
         <article class="step">
           <div class="step-num">01</div>
           <div class="step-copy">
             <h4>Escribenos por WhatsApp</h4>
-            <p>Cuéntanos el tipo de servicio, tamaño de tu perro y cualquier detalle importante sobre su rutina.</p>
+            <p>Cuéntanos si buscas una evaluacion, tienes dudas por mal aliento o quieres revisar su salud oral.</p>
           </div>
         </article>
         <article class="step">
           <div class="step-num">02</div>
           <div class="step-copy">
-            <h4>Coordinamos la cita</h4>
-            <p>Definimos disponibilidad y el servicio mas adecuado para que la experiencia sea ordenada y clara.</p>
+            <h4>Coordinamos la atencion</h4>
+            <p>Definimos la cita y te explicamos de forma simple como sera la experiencia y que esperar.</p>
           </div>
         </article>
         <article class="step">
           <div class="step-num">03</div>
           <div class="step-copy">
-            <h4>Atendemos con cuidado</h4>
-            <p>Realizamos el baño o grooming con enfoque suave, respetando el ritmo y necesidad de cada perro.</p>
+            <h4>Evaluamos y orientamos</h4>
+            <p>Revisamos el estado oral y te indicamos el tipo de cuidado mas conveniente para tu mascota.</p>
           </div>
         </article>
         <article class="step">
           <div class="step-num">04</div>
           <div class="step-copy">
-            <h4>Entregamos limpio y comodo</h4>
-            <p>Tu perro vuelve a casa con una sensación de frescura, mejor presencia y más bienestar general.</p>
+            <h4>Te llevas un plan mas claro</h4>
+            <p>Sales con recomendaciones practicas para sostener el cuidado oral y mejorar su bienestar diario.</p>
           </div>
         </article>
       </div>
     </div>
 
     <div class="how-visual">
-      <img src="img/kiroservicios/KIROSPA.png" alt="Kiro Spa cuidado canino profesional">
+      <img src="assets/img/kiroservicios/KIRODENT.png" alt="Kiro Dent cuidado oral para mascotas">
       <div class="how-card">
-        <div class="mini">Spa canino</div>
-        <strong>Suave y profesional</strong>
+        <div class="mini">Higiene dental</div>
+        <strong>Preventiva y clara</strong>
       </div>
     </div>
   </div>
@@ -784,30 +771,30 @@ footer {
 <section class="testi sec reveal" id="testimonios">
   <div class="testi-head">
     <div class="sec-label">Testimonios</div>
-    <h2 class="sec-title">Comentarios de familias que ya reservaron su experiencia</h2>
-    <p>La diferencia no solo se ve en el pelaje. Tambien se nota en la tranquilidad del proceso y en como vuelve a casa cada mascota.</p>
+    <h2 class="sec-title">Experiencias de familias que buscaban mas claridad y cuidado oral</h2>
+    <p>Cuando el proceso es facil de entender, la confianza cambia. Eso se refleja en la reserva, la atencion y el seguimiento.</p>
   </div>
 
   <div class="testi-grid">
     <article class="t-card">
       <div class="t-stars">★★★★★</div>
-      <p class="t-quote">Mi perro salio limpio, relajado y con un acabado precioso. Se noto que lo trataron con bastante paciencia.</p>
+      <p class="t-quote">Nos ayudaron a entender mejor el problema y salir con una idea clara de como seguir cuidando a nuestro perro.</p>
       <div class="t-author">
-        <div class="t-ava">SM</div>
+        <div class="t-ava">CR</div>
         <div>
-          <div class="t-name">Sofia M.</div>
-          <div class="t-sub">Baño y grooming</div>
+          <div class="t-name">Carla R.</div>
+          <div class="t-sub">Evaluacion dental</div>
         </div>
       </div>
     </article>
 
     <article class="t-card">
       <div class="t-stars">★★★★★</div>
-      <p class="t-quote">Nos gusto mucho la atencion. Todo fue claro desde la reserva y el resultado dejo a nuestro perro super comodo.</p>
+      <p class="t-quote">La experiencia fue bastante cercana. Nos explicaron todo sin vueltas y eso dio mucha tranquilidad.</p>
       <div class="t-author">
-        <div class="t-ava">AR</div>
+        <div class="t-ava">MP</div>
         <div>
-          <div class="t-name">Andrea R.</div>
+          <div class="t-name">Marco P.</div>
           <div class="t-sub">Reserva por WhatsApp</div>
         </div>
       </div>
@@ -815,12 +802,12 @@ footer {
 
     <article class="t-card">
       <div class="t-stars">★★★★★</div>
-      <p class="t-quote">Se siente un servicio bien pensado. No es solo estetica, realmente cuidan que la experiencia sea tranquila.</p>
+      <p class="t-quote">Se siente un servicio responsable. No solo atienden, tambien te orientan para mantener el cuidado en casa.</p>
       <div class="t-author">
-        <div class="t-ava">JL</div>
+        <div class="t-ava">LS</div>
         <div>
-          <div class="t-name">Javier L.</div>
-          <div class="t-sub">Cliente recurrente</div>
+          <div class="t-name">Lucia S.</div>
+          <div class="t-sub">Seguimiento en casa</div>
         </div>
       </div>
     </article>
@@ -831,13 +818,13 @@ footer {
   <div class="cta-bg-shape"></div>
   <div class="cta-inner">
     <div class="cta-text">
-      <div class="sec-label">Reserva ahora</div>
-      <h2 class="cta-title">Tu perro puede vivir una experiencia mas limpia, suave y relajante</h2>
-      <p>Escribenos por WhatsApp para coordinar su cita, resolver dudas y elegir el servicio que mejor encaje con su pelaje y su rutina.</p>
+      <div class="sec-label">Agenda ahora</div>
+      <h2 class="cta-title">Tu mascota puede tener una boca mas sana con una atencion clara y cuidadosa</h2>
+      <p>Escribenos por WhatsApp para reservar su evaluacion, resolver dudas y empezar un cuidado oral mas ordenado y practico.</p>
     </div>
 
     <div class="cta-actions">
-      <a href="https://wa.me/51916566758?text=Hola%20Kiro%20Spa,%20quiero%20reservar%20mi%20cita%20ahora" class="btn-wa" target="_blank" rel="noreferrer">
+      <a href="https://wa.me/51916566758?text=Hola%20Kiro%20Dent,%20quiero%20reservar%20mi%20evaluacion%20ahora" class="btn-wa" target="_blank" rel="noreferrer">
         <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.07 0C5.56 0 .24 5.29.24 11.8c0 2.08.54 4.1 1.57 5.89L0 24l6.5-1.7a11.76 11.76 0 0 0 5.57 1.42h.01c6.51 0 11.83-5.29 11.83-11.8 0-3.16-1.23-6.12-3.39-8.44zM12.08 21.7h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.86 1.01 1.03-3.76-.24-.39a9.83 9.83 0 0 1-1.51-5.18c0-5.44 4.43-9.87 9.89-9.87 2.64 0 5.12 1.03 6.98 2.9a9.8 9.8 0 0 1 2.9 6.97c0 5.45-4.44 9.88-9.89 9.88zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.89-.79-1.49-1.76-1.67-2.06-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.37s-1.05 1.03-1.05 2.5 1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.13 4.54.72.31 1.28.5 1.72.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/></svg>
         Reservar por WhatsApp
       </a>
@@ -853,13 +840,13 @@ footer {
   <div class="footer-main">
     <div class="fb-brand">
       <a href="#inicio" class="logo">
-        <div class="logo-mark">KS</div>
+        <div class="logo-mark">KD</div>
         <div class="logo-copy">
-          <div class="name">KIROSPA</div>
+          <div class="name">KIRODENT</div>
           <div class="sub">Familia Kirocorp</div>
         </div>
       </a>
-      <p>Spa canino, baño y grooming con una experiencia limpia, suave y profesional para perros felices y familias más tranquilas.</p>
+      <p>Higiene dental preventiva y cuidado oral para mascotas. Una experiencia clara, cercana y profesional para familias que buscan mas bienestar.</p>
       <div class="fb-contacts">
         <a href="https://wa.me/51916566758" target="_blank" rel="noreferrer">WhatsApp: +51 916 566 758</a>
         <a href="mailto:hola@kirocorp.pe">hola@kirocorp.pe</a>
@@ -871,7 +858,7 @@ footer {
       <h5>Navegacion</h5>
       <ul>
         <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
         <li><a href="#testimonios">Testimonios</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
@@ -880,10 +867,10 @@ footer {
     <div class="fb-col">
       <h5>Servicios</h5>
       <ul>
-        <li><a href="#servicios">Baño canino</a></li>
-        <li><a href="#servicios">Grooming y corte</a></li>
-        <li><a href="#servicios">Cepillado</a></li>
-        <li><a href="#servicios">Corte de unas</a></li>
+        <li><a href="#servicios">Evaluacion dental</a></li>
+        <li><a href="#servicios">Higiene preventiva</a></li>
+        <li><a href="#servicios">Revision oral</a></li>
+        <li><a href="#servicios">Orientacion en casa</a></li>
       </ul>
     </div>
 
@@ -903,12 +890,12 @@ footer {
   </div>
 
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 KIROSPA. Todos los derechos reservados.</div>
-    <div class="footer-copy">Cuidado, frescura y bienestar para tu perro.</div>
+    <div class="footer-copy">© 2026 KIRODENT. Todos los derechos reservados.</div>
+    <div class="footer-copy">Mas salud oral para una vida mas comoda.</div>
   </div>
 </footer>
 
-<a class="wa-fab" href="https://wa.me/51916566758?text=Hola%20Kiro%20Spa,%20quiero%20hablar%20con%20ustedes" target="_blank" rel="noreferrer" aria-label="Hablar por WhatsApp">
+<a class="wa-fab" href="https://wa.me/51916566758?text=Hola%20Kiro%20Dent,%20quiero%20hablar%20con%20ustedes" target="_blank" rel="noreferrer" aria-label="Hablar por WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.07 0C5.56 0 .24 5.29.24 11.8c0 2.08.54 4.1 1.57 5.89L0 24l6.5-1.7a11.76 11.76 0 0 0 5.57 1.42h.01c6.51 0 11.83-5.29 11.83-11.8 0-3.16-1.23-6.12-3.39-8.44zM12.08 21.7h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.86 1.01 1.03-3.76-.24-.39a9.83 9.83 0 0 1-1.51-5.18c0-5.44 4.43-9.87 9.89-9.87 2.64 0 5.12 1.03 6.98 2.9a9.8 9.8 0 0 1 2.9 6.97c0 5.45-4.44 9.88-9.89 9.88zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.89-.79-1.49-1.76-1.67-2.06-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.37s-1.05 1.03-1.05 2.5 1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.13 4.54.72.31 1.28.5 1.72.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/></svg>
 </a>
 
@@ -925,3 +912,4 @@ document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 </script>
 </body>
 </html>
+

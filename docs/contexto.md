@@ -15,8 +15,8 @@ La estructura actual está centrada en páginas HTML independientes con un CSS g
 ## Stack tecnológico
 
 - **HTML5** para todas las páginas.
-- **CSS3** en un archivo global principal: `style.css`.
-- **JavaScript vanilla** en `script.js`.
+- **CSS3** en un archivo global principal: `styles/style.css`.
+- **JavaScript vanilla** en `scripts/script.js`.
 - **Tailwind CSS vía CDN** en varias páginas.
 - **Google Fonts**:
   - `Sora`
@@ -31,19 +31,19 @@ La arquitectura es de tipo **multi-page static site**:
 
 - Cada sección o producto importante tiene su propio `.html`.
 - Hay páginas principales de navegación y páginas de detalle.
-- El contenido visual depende mucho de imágenes locales en `img/`.
-- El comportamiento interactivo común se centraliza en `script.js`.
+- El contenido visual depende mucho de imágenes locales en `assets/img/`.
+- El comportamiento interactivo común se centraliza en `scripts/script.js`.
 
 ### Páginas principales
 
 - `index.html`: landing principal de Kirocorp.
 - `ropa.html` y `ropa-perro.html`: catálogo/colección de ropa para mascotas.
-- `productos-snack.html`: catálogo general de snacks.
-- `trabajaconnosotros.html`: landing de reclutamiento.
+- `pages/productos/productos-snack.html`: catálogo general de snacks.
+- `pages/trabajo/trabajaconnosotros.html`: landing de reclutamiento.
 
 ### Páginas de servicios
 
-- `kirocoach.html`: adiestramiento canino.
+- `pages/servicios/kirocoach.html`: adiestramiento canino.
 - `kirodent.html`: higiene dental para mascotas.
 - `kiroflavor.html`: sazonador natural para mascotas.
 - `kirohome.html`: hospedaje canino.
@@ -80,7 +80,7 @@ El proyecto reutiliza varios patrones visuales entre páginas:
 
 ### Colores principales
 
-Definidos en `style.css` y repetidos en páginas internas:
+Definidos en `styles/style.css` y repetidos en páginas internas:
 
 - Naranja de marca: `#ff7a1a`
 - Naranja oscuro: `#e36200`
@@ -102,7 +102,7 @@ Definidos en `style.css` y repetidos en páginas internas:
 
 ## CSS global
 
-`style.css` contiene estilos base y componentes compartidos:
+`styles/style.css` contiene estilos base y componentes compartidos:
 
 - Variables de marca en `:root`.
 - Base global de tipografía y comportamiento de scroll.
@@ -128,7 +128,7 @@ También incluye la animación `marquee` para el ticker de anuncios.
 
 ## JavaScript global
 
-`script.js` maneja comportamiento compartido y algunas mejoras de UX:
+`scripts/script.js` maneja comportamiento compartido y algunas mejoras de UX:
 
 - Inserta el año actual en `#year`.
 - Reemplazo de imágenes fallidas con un fallback accesible para elementos `img.product-image`.
@@ -189,22 +189,22 @@ El archivo espera ciertos elementos en el HTML:
 
 ### Imágenes
 
-El contenido visual se apoya casi por completo en `img/`:
+El contenido visual se apoya casi por completo en `assets/img/`:
 
 - Logos y portadas.
 - Fotos de productos snacks.
 - Fotos de ropa.
 - Testimonios.
-- Carpeta `img/kiroservicios/` con piezas de servicios.
-- Carpeta `img/productos/` con imágenes de snacks.
-- Carpeta `img/ropa/` con catálogo visual de prendas.
-- Carpeta `img/testimonios/` con fotos asociadas a clientes o mascotas.
+- Carpeta `assets/img/kiroservicios/` con piezas de servicios.
+- Carpeta `assets/img/productos/` con imágenes de snacks.
+- Carpeta `assets/img/ropa/` con catálogo visual de prendas.
+- Carpeta `assets/img/testimonios/` con fotos asociadas a clientes o mascotas.
 
 ### Archivos destacados
 
-- `img/kirologoqueda.jpg`: logo o ícono principal.
-- `img/kiroheader.jpg`: imagen hero principal.
-- `img/kiro11.jpg`: imagen usada en la página de reclutamiento.
+- `assets/img/kirologoqueda.jpg`: logo o ícono principal.
+- `assets/img/kiroheader.jpg`: imagen hero principal.
+- `assets/img/kiro11.jpg`: imagen usada en la página de reclutamiento.
 
 ## Flujos de conversión
 
@@ -249,26 +249,27 @@ Por lo tanto, el sitio parece mantenerse de forma manual o semi-manual, con HTML
 - El generador de ropa depende de una estructura interna frágil.
 - Muchos assets locales pueden crecer rápido en peso.
 - Se usa Tailwind por CDN, lo que simplifica, pero deja dependencias externas en runtime.
-- `script.js` tiene varias ramas que asumen presencia de elementos específicos; conviene mantener consistencia de IDs y clases.
+- `scripts/script.js` tiene varias ramas que asumen presencia de elementos específicos; conviene mantener consistencia de IDs y clases.
 
 ## Convenciones útiles para editar
 
 - Mantener el estilo visual actual si se agregan páginas nuevas.
 - Reutilizar la paleta de marca y la tipografía `Sora`.
 - Preferir componentes HTML simples y consistentes.
-- Si se agrega interactividad nueva, revisar compatibilidad con `script.js`.
+- Si se agrega interactividad nueva, revisar compatibilidad con `scripts/script.js`.
 - Si se modifica `ropa-perro.html`, verificar que el generador siga encontrando `const catalog = [...]`.
 
 ## Mapa rápido de intención por archivo
 
 - `index.html`: presentación general y venta principal.
-- `productos-snack.html`: catálogo de snacks.
+- `pages/productos/productos-snack.html`: catálogo de snacks.
 - `producto-*.html`: fichas individuales de snacks.
 - `ropa.html` / `ropa-perro.html`: catálogo de ropa.
 - `ropa/*.html`: fichas generadas de prendas.
 - `kiro*.html`: servicios secundarios de marca.
-- `trabajaconnosotros.html`: reclutamiento.
-- `style.css`: sistema visual y componentes comunes.
-- `script.js`: interacciones compartidas.
+- `pages/trabajo/trabajaconnosotros.html`: reclutamiento.
+- `styles/style.css`: sistema visual y componentes comunes.
+- `scripts/script.js`: interacciones compartidas.
 - `generate-ropa-pages.js`: automatización de catálogo de ropa.
+
 

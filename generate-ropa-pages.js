@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = __dirname;
-const sourcePath = path.join(root, "ropa-perro.html");
+const sourcePath = path.join(root, "pages", "ropa", "ropa-perro.html");
 const outputDir = path.join(root, "ropa");
 
 const slugify = (value) =>
@@ -35,7 +35,7 @@ const extractCatalog = () => {
 const toPageImage = (src) => {
   if (src.startsWith("../")) return src;
   if (src.startsWith("./")) return src.replace("./", "../");
-  if (src.startsWith("img/")) return `../${src}`;
+  if (src.startsWith("assets/img/")) return `../${src}`;
   return src;
 };
 
@@ -208,7 +208,7 @@ const buildNavbar = (prefix) => `
     <div class="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 md:h-16 md:flex-nowrap md:py-0 lg:px-8">
       <a href="${prefix}index.html" class="flex shrink-0 items-center gap-3 text-white">
         <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/90 p-1">
-          <img src="${prefix}img/kirologoqueda.jpg" alt="KiroCorp" class="h-full w-full rounded-xl object-cover" width="40" height="40" />
+          <img src="${prefix}assets/img/kirologoqueda.jpg" alt="KiroCorp" class="h-full w-full rounded-xl object-cover" width="40" height="40" />
         </span>
         <span class="text-base font-semibold tracking-tight sm:text-lg">KIROCORP</span>
       </a>
@@ -300,7 +300,7 @@ const buildPage = (item) => {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}" />
-  <link rel="icon" href="${prefix}img/kirologoqueda.jpg" type="image/jpeg" />
+  <link rel="icon" href="${prefix}assets/img/kirologoqueda.jpg" type="image/jpeg" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@400;600&display=swap" />
   <script>
@@ -312,7 +312,7 @@ const buildPage = (item) => {
       }
     };
   </script>
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../styles/style.css" />
   <style>
     .ropa-page {
       position: relative;
@@ -478,7 +478,7 @@ const buildPage = (item) => {
     <div class="mx-auto grid max-w-7xl gap-8 px-6 py-12 md:grid-cols-[1.2fr_1fr_1fr] lg:px-8">
       <div class="space-y-4">
         <div class="flex items-center gap-3">
-          <img src="${prefix}img/kirologoqueda.jpg" alt="KiroCorp" class="h-11 w-11 rounded-xl bg-white object-cover" />
+          <img src="${prefix}assets/img/kirologoqueda.jpg" alt="KiroCorp" class="h-11 w-11 rounded-xl bg-white object-cover" />
           <span class="text-lg font-semibold">Kirocorp</span>
         </div>
         <p class="text-sm text-zinc-400">Fichas con talla, precio y compra directa listas para catálogo y WhatsApp.</p>
@@ -513,7 +513,7 @@ const buildPage = (item) => {
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="../script.js"></script>
+  <script src="../scripts/script.js"></script>
 </body>
 </html>`;
 };
@@ -528,3 +528,5 @@ for (const item of catalog) {
 }
 
 console.log(`Generadas ${catalog.length} subpáginas en ${outputDir}`);
+
+
