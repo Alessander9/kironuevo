@@ -1,12 +1,13 @@
 # Kirocorp
 
-> Sitio web estático de marca para snacks naturales premium, ropita para mascotas y servicios asociados.
+> Sistema web estático multipágina para snacks premium, ropa para mascotas y servicios de marca.
 
-![HTML](https://img.shields.io/badge/HTML5-Static%20Site-E34F26?logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-Global%20Styles-1572B6?logo=css3&logoColor=white)
-![JS](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?logo=javascript&logoColor=black)
-![Tailwind](https://img.shields.io/badge/Tailwind-CDN-38B2AC?logo=tailwindcss&logoColor=white)
-![WhatsApp](https://img.shields.io/badge/WhatsApp-Conversion%20Flow-25D366?logo=whatsapp&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-Site%20Shell-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-Design%20System-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-UI%20Logic-F7DF1E?logo=javascript&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-CDN%20Utilities-38B2AC?logo=tailwindcss&logoColor=white)
+![WhatsApp](https://img.shields.io/badge/WhatsApp-Lead%20Channel-25D366?logo=whatsapp&logoColor=white)
+![Static](https://img.shields.io/badge/Deployment-Static%20Hosting-6B7280)
 
 ## Tabla de Contenidos
 
@@ -37,6 +38,18 @@ El proyecto está pensado para:
 La solución actual es un **sitio estático multipágina**, sin backend visible y sin framework de frontend.
 Esto lo hace simple de publicar, fácil de duplicar por páginas y muy directo para ventas.
 
+### Capacidades principales
+
+| Capacidad | Implementación |
+|---|---|
+| Landing principal | `index.html` |
+| Catálogo de snacks | `productos-snack.html` + `producto-*.html` |
+| Catálogo de ropa | `ropa-perro.html` + `ropa.html` + `ropa/*.html` |
+| Servicios | `kiro*.html` |
+| Contacto | Enlaces `wa.me` |
+| Material descargable | `KIROCORP - catalogo 2026.pdf` |
+| Automatización | `generate-ropa-pages.js` |
+
 ## Stack tecnológico
 
 ### Frontend
@@ -48,6 +61,17 @@ Esto lo hace simple de publicar, fácil de duplicar por páginas y muy directo p
 - **Google Fonts**:
   - `Sora`
   - `Material Symbols Rounded`
+
+### Técnica visual
+
+| Capa | Decisión técnica |
+|---|---|
+| Tipografía | `Sora` para títulos, textos y UI |
+| Iconografía | `Material Symbols Rounded` |
+| Sistema de color | Variables CSS en `:root` |
+| Layout | Flexbox, CSS Grid y utilidades Tailwind |
+| Animación | CSS + `IntersectionObserver` + GSAP opcional |
+| Diseño responsive | Breakpoints Tailwind y estilos custom |
 
 ### Infraestructura
 
@@ -69,6 +93,21 @@ La arquitectura responde a un patrón de **multi-page static site**:
 - La navegación se repite entre páginas.
 - Los estilos globales se comparten.
 - La interacción común vive en un solo archivo JS.
+
+### Diagrama de capas
+
+```mermaid
+flowchart TB
+  U[Usuario] --> H[HTML multipágina]
+  H --> C[style.css]
+  H --> J[script.js]
+  H --> T[Tailwind CDN]
+  H --> F[Google Fonts]
+  H --> A[Assets locales]
+  A --> I[img/]
+  A --> P[PDFs]
+  H --> W[WhatsApp]
+```
 
 ### Diagrama general
 
@@ -142,6 +181,30 @@ flowchart TD
 - [`generate-ropa-pages.js`](./generate-ropa-pages.js)
 - [`contexto.md`](./contexto.md)
 
+## Árbol del repositorio
+
+```text
+kironuevo/
+├── index.html
+├── style.css
+├── script.js
+├── generate-ropa-pages.js
+├── contexto.md
+├── README.md
+├── trabajaconnosotros.html
+├── productos-snack.html
+├── producto-*.html
+├── kiro*.html
+├── ropa-perro.html
+├── ropa/
+├── img/
+│   ├── productos/
+│   ├── ropa/
+│   ├── kiroservicios/
+│   └── testimonios/
+└── KIROCORP - catalogo 2026.pdf
+```
+
 ## Flujos principales
 
 ### 1. Compra y contacto
@@ -184,6 +247,32 @@ flowchart LR
   D --> E[ropa/*.html]
 ```
 
+## Contratos entre archivos
+
+### `index.html`
+
+- Consume `style.css` y `script.js`.
+- Expone IDs y clases que el JS espera.
+- Es el punto de entrada del usuario.
+
+### `style.css`
+
+- Define tokens visuales de la marca.
+- Soporta navegación, hero, cards y secciones.
+- Debe mantenerse compatible con las clases usadas por los HTML.
+
+### `script.js`
+
+- Asume que ciertas páginas incluyen menú, nav shell, fallbacks de imágenes y otros nodos.
+- Es sensible a IDs y atributos de datos.
+- Si un bloque no existe, el script intenta degradar con seguridad.
+
+### `generate-ropa-pages.js`
+
+- Depende de `ropa-perro.html` como fuente de catálogo.
+- Produce HTML derivado.
+- Si cambia el formato del array `catalog`, el generador puede fallar.
+
 ## Estructura de archivos
 
 ### Raíz del proyecto
@@ -206,6 +295,17 @@ flowchart LR
 - [`img/productos/`](./img/productos/): imágenes de snacks/productos.
 - [`img/ropa/`](./img/ropa/): catálogo visual de ropita.
 - [`img/testimonios/`](./img/testimonios/): fotos de testimonios.
+
+### Inventario visual
+
+| Carpeta | Uso |
+|---|---|
+| `img/` | Imágenes base del sitio |
+| `img/productos/` | Fotos de snacks |
+| `img/ropa/` | Fotografías de prendas |
+| `img/kiroservicios/` | Creatividades para servicios |
+| `img/testimonios/` | Evidencia social y casos |
+| `ropa/` | Fichas HTML generadas |
 
 ## Componentes globales
 
@@ -234,6 +334,17 @@ Archivo de estilos base y componentes compartidos.
 - `.notice-track`
 - `.section`
 - `.feature-card`
+
+### Contrato visual global
+
+| Recurso | Propósito |
+|---|---|
+| `.nav-link` | Enlaces de navegación consistentes |
+| `.site-nav-shell` | Contenedor visual de la navbar |
+| `.site-hero` | Encabezado principal de la home |
+| `.notice-bar` | Banda de beneficios/mensajes |
+| `.section` | Espaciado y ritmo de páginas internas |
+| `.feature-card` | Reutilización de cards promocionales |
 
 ## `script.js`
 
@@ -268,6 +379,27 @@ Archivo único para la interacción compartida.
 - `#waPopupClose`
 - `[data-benefits-slider]`
 
+### Máquina de estados del menú
+
+```mermaid
+stateDiagram-v2
+  [*] --> Cerrado
+  Cerrado --> Abierto: click en #menuBtn
+  Abierto --> Cerrado: click fuera
+  Abierto --> Cerrado: Escape
+  Abierto --> Cerrado: click en un enlace
+  Cerrado --> Cerrado: resize desktop
+```
+
+### Puntos de extensión
+
+Si se agrega una nueva vista interactiva, el patrón recomendado es:
+
+1. Marcar el contenedor con `data-*`.
+2. Añadir el comportamiento en `script.js`.
+3. Definir estilos en `style.css`.
+4. Mantener el fallback para mobile/reduced motion.
+
 ## Dependencias externas
 
 ### En tiempo de ejecución
@@ -283,6 +415,16 @@ Archivo único para la interacción compartida.
 ### Observación
 
 El uso de CDN simplifica el mantenimiento, pero añade dependencia de red externa para que el sitio se vea como fue diseñado.
+
+### Matriz de dependencias
+
+| Dependencia | Tipo | Riesgo | Uso |
+|---|---:|---:|---|
+| Tailwind CDN | runtime | medio | utilidades rápidas |
+| Google Fonts | runtime | medio | tipografía y símbolos |
+| WhatsApp | externa | medio | conversión |
+| GSAP | opcional | bajo | animaciones avanzadas |
+| PDFs locales | local | bajo | catálogo descargable |
 
 ## SEO y metadatos
 
@@ -307,6 +449,17 @@ Esto mejora:
 - Presentación en buscadores.
 - Cohesión de marca al copiar enlaces.
 
+### Criterios SEO observables
+
+| Criterio | Estado |
+|---|---|
+| `title` por página | presente |
+| `meta description` | presente en varias páginas |
+| Open Graph | presente en páginas clave |
+| Twitter Cards | presente en algunas páginas |
+| JSON-LD | presente en `ropa.html` |
+| URLs limpias | multipágina estática |
+
 ## Automatización
 
 ### Generación de ropa
@@ -326,6 +479,14 @@ flowchart TD
   B --> C[Crear/actualizar páginas en ropa/]
   C --> D[Publicar sitio]
 ```
+
+### Notas técnicas del generador
+
+- Usa Node.js con `fs` y `path`.
+- Extrae el catálogo desde el HTML fuente.
+- Construye páginas a partir de templates de string.
+- Aplica `slugify` para nombres de archivo.
+- Escapa HTML para evitar inyección accidental en contenido generado.
 
 ## Guía de mantenimiento
 
@@ -356,6 +517,31 @@ flowchart TD
 - Probar el PDF descargable.
 - Comprobar que el catálogo de ropa siga generando fichas.
 
+## Notas de ingeniería
+
+### Rendimiento
+
+- El sitio es liviano en lógica, pero puede ser pesado en imágenes.
+- Conviene optimizar formatos y tamaños de `img/`.
+- El uso de CDN reduce trabajo de bundle, pero aumenta dependencia externa.
+
+### Accesibilidad
+
+- Hay uso de `alt` en imágenes relevantes.
+- El menú móvil tiene atributos ARIA.
+- El script intenta degradar con `prefers-reduced-motion`.
+- Los iconos son decorativos cuando corresponde y se marcan con `aria-hidden`.
+
+### Escalabilidad
+
+- El sistema escala mejor agregando páginas nuevas que generando componentes complejos.
+- Si el volumen de páginas crece, sería razonable migrar a un generador de sitio o una plantilla común.
+
+### Observabilidad manual
+
+No hay telemetría ni analítica declarada en el repositorio.
+Si se incorpora medición de conversión, conviene centralizarla para no repetir scripts en cada HTML.
+
 ## Referencias rápidas
 
 ### Archivos clave
@@ -379,4 +565,3 @@ flowchart TD
 ---
 
 Si vas a extender el proyecto, este README y [`contexto.md`](./contexto.md) deberían actualizarse juntos para mantener la documentación alineada con la implementación.
-
