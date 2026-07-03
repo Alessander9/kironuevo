@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ropa para Perros y Gatitos | Boutique Kirocorp</title>
+  <meta name="description" content="Descubre ropa elegante y cómoda para perros y gatitos en Kirocorp: abrigos, hoodies, conjuntos y accesorios con compra directa por WhatsApp." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ropa para Perros y Gatitos | Boutique Kirocorp" />
+  <meta property="og:description" content="Ropitas elegantes, cómodas y listas para paseo, descanso y momentos especiales." />
+  <meta property="og:image" content="img/kirologoqueda.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ropa para Perros y Gatitos | Boutique Kirocorp" />
+  <meta name="twitter:description" content="Boutique de ropitas para mascotas con compra directa por WhatsApp." />
+  <link rel="icon" href="img/kirologoqueda.jpg" type="image/jpeg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@400;600&display=swap" />
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { display: ["Sora", "ui-sans-serif", "system-ui"] } } } };
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Ropa para Perros y Gatitos | Boutique Kirocorp",
+      "description": "Colección de ropitas para perros y gatitos con abrigos, conjuntos y accesorios pensados para comodidad, paseo y compra directa por WhatsApp.",
+      "inLanguage": "es",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kirocorp"
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(255, 122, 26, 0.08), transparent 28%),
+        radial-gradient(circle at top right, rgba(0, 76, 151, 0.08), transparent 24%),
+        linear-gradient(180deg, #fffaf6 0%, #ffffff 22%, #f7fbff 100%);
+    }
+
+    .ropa-hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(0, 76, 151, 0.14), transparent 30%),
+        radial-gradient(circle at 88% 12%, rgba(255, 122, 26, 0.16), transparent 24%),
+        linear-gradient(135deg, rgba(255, 249, 243, 0.96), rgba(248, 251, 255, 0.98) 52%, rgba(255, 255, 255, 0.98));
+    }
+
+    .ropa-hero::before,
+    .ropa-hero::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      border-radius: 9999px;
+      pointer-events: none;
+      opacity: 0.75;
+    }
+
+    .ropa-hero::before {
+      width: 18rem;
+      height: 18rem;
+      right: -4rem;
+      top: 3rem;
+      background: radial-gradient(circle, rgba(255, 122, 26, 0.18), transparent 72%);
+    }
+
+    .ropa-hero::after {
+      width: 20rem;
+      height: 20rem;
+      left: -7rem;
+      bottom: 0.5rem;
+      background: radial-gradient(circle, rgba(0, 76, 151, 0.14), transparent 72%);
+    }
+
+    .ropa-hero-shell,
+    .ropa-grid-shell,
+    .ropa-size-shell,
+    .ropa-cta-shell {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ropa-hero-grid {
+      align-items: center;
+    }
+
+    .ropa-hero-copy {
+      display: grid;
+      gap: 1.35rem;
+    }
+
+    .ropa-hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: fit-content;
+      padding: 0.55rem 0.95rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(0, 76, 151, 0.1);
+      box-shadow: 0 18px 32px -26px rgba(15, 23, 42, 0.28);
+      color: #0f3d78;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ropa-hero-kicker .material-symbols-rounded {
+      font-size: 0.95rem;
+    }
+
+    .ropa-hero-heading {
+      max-width: 12ch;
+      font-size: clamp(2.9rem, 6vw, 5.9rem);
+      font-weight: 800;
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      color: #0f172a;
+    }
+
+    .ropa-hero-heading em {
+      font-style: normal;
+      color: var(--brand-orange);
+    }
+
+    .ropa-hero-lead {
+      max-width: 38rem;
+      font-size: 1.02rem;
+      line-height: 1.9;
+      color: #475569;
+    }
+
+    .ropa-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .ropa-hero-signals {
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      max-width: 42rem;
+    }
+
+    .ropa-hero-signal {
+      padding: 1rem 1rem 0.95rem;
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      box-shadow: 0 24px 44px -34px rgba(15, 23, 42, 0.24);
+      backdrop-filter: blur(12px);
+    }
+
+    .ropa-hero-signal strong {
+      display: block;
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .ropa-hero-signal span {
+      display: block;
+      margin-top: 0.28rem;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      color: #64748b;
+    }
+
+    .ropa-hero-stage {
+      position: relative;
+      padding: clamp(1.15rem, 2vw, 1.7rem);
+      border-radius: 2.2rem;
+      background:
+        radial-gradient(circle at top right, rgba(255, 122, 26, 0.18), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(0, 76, 151, 0.16), transparent 28%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(245, 249, 255, 0.94));
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      box-shadow: 0 40px 90px -48px rgba(15, 23, 42, 0.34);
+    }
+
+    .ropa-hero-stage::before {
+      content: "";
+      position: absolute;
+      inset: 1rem;
+      border-radius: 1.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      pointer-events: none;
+    }
+
+    .ropa-stage-grid {
+      display: grid;
+      gap: 0.9rem;
+      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-rows: auto auto;
+    }
+
+    .ropa-stage-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.7rem;
+      min-height: 11rem;
+      background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.08)),
+        rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+    }
+
+    .ropa-stage-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .ropa-stage-card--tall {
+      grid-row: span 2;
+      min-height: 24rem;
+    }
+
+    .ropa-stage-note {
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      padding: 0.95rem 1rem;
+      border-radius: 1.2rem;
+      background: rgba(15, 23, 42, 0.58);
+      backdrop-filter: blur(12px);
+      color: #fff;
+    }
+
+    .ropa-stage-note strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .ropa-stage-note span {
+      display: block;
+      margin-top: 0.22rem;
+      font-size: 0.78rem;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .ropa-stage-float {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.9rem 1rem;
+      border-radius: 1.3rem;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      box-shadow: 0 24px 44px -32px rgba(15, 23, 42, 0.3);
+      max-width: 15rem;
+    }
+
+    .ropa-stage-float--top {
+      top: -1rem;
+      right: -0.6rem;
+    }
+
+    .ropa-stage-float--bottom {
+      left: -0.6rem;
+      bottom: 1.4rem;
+    }
+
+    .ropa-stage-float .material-symbols-rounded {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.7rem;
+      height: 2.7rem;
+      border-radius: 1rem;
+      background: linear-gradient(135deg, #004c97, #ff7a1a);
+      color: #fff;
+      font-size: 1.1rem;
+      flex: 0 0 auto;
+      box-shadow: 0 16px 28px -18px rgba(0, 76, 151, 0.56);
+    }
+
+    .ropa-stage-float strong {
+      display: block;
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .ropa-stage-float span:last-child {
+      display: block;
+      margin-top: 0.15rem;
+      font-size: 0.76rem;
+      line-height: 1.5;
+      color: #64748b;
+    }
+
+    .ropa-chip-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .ropa-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 0.95rem;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      border: 1px solid rgba(0, 76, 151, 0.1);
+      background: rgba(255, 255, 255, 0.92);
+      color: #0f3d78;
+      box-shadow: 0 20px 34px -28px rgba(15, 23, 42, 0.35);
+    }
+
+    .ropa-chip .material-symbols-rounded {
+      font-size: 0.9rem;
+    }
+
+    .ropa-showcase {
+      display: grid;
+      gap: 1.2rem;
+      align-content: start;
+    }
+
+    .ropa-editorial-card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(1.4rem, 2vw, 2rem);
+      border-radius: 2rem;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      background:
+        radial-gradient(circle at top right, rgba(255, 122, 26, 0.16), transparent 28%),
+        linear-gradient(160deg, rgba(255, 255, 255, 0.98), rgba(247, 250, 255, 0.96));
+      box-shadow: 0 34px 80px -50px rgba(15, 23, 42, 0.35);
+    }
+
+    .ropa-editorial-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 76, 151, 0.06), transparent 32%);
+      pointer-events: none;
+    }
+
+    .ropa-editorial-title {
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: #0f172a;
+    }
+
+    .ropa-editorial-copy {
+      margin-top: 0.9rem;
+      max-width: 34rem;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      color: #475569;
+    }
+
+    .ropa-showcase-grid {
+      display: grid;
+      gap: 0.9rem;
+      margin-top: 1.3rem;
+    }
+
+    .ropa-showcase-tile {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      padding: 1rem 1.05rem;
+      border-radius: 1.3rem;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      box-shadow: 0 18px 36px -30px rgba(15, 23, 42, 0.28);
+    }
+
+    .ropa-showcase-tile .material-symbols-rounded {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 1rem;
+      background: linear-gradient(135deg, #004c97, #ff7a1a);
+      color: #fff;
+      font-size: 1.2rem;
+      flex: 0 0 auto;
+      box-shadow: 0 18px 28px -20px rgba(0, 76, 151, 0.58);
+    }
+
+    .ropa-showcase-tile strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .ropa-showcase-tile span:last-child {
+      display: block;
+      margin-top: 0.15rem;
+      font-size: 0.86rem;
+      line-height: 1.65;
+      color: #556070;
+    }
+
+    .ropa-stat {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 1.1rem 1.15rem;
+      border-radius: 1.4rem;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(9, 34, 144, 0.08);
+      box-shadow: 0 24px 48px -34px rgba(15, 23, 42, 0.3);
+    }
+
+    .ropa-stat-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 1rem;
+      color: #fff;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #004c97, #ff7a1a);
+      box-shadow: 0 16px 24px -18px rgba(0, 76, 151, 0.55);
+      flex: 0 0 auto;
+    }
+
+    .ropa-stat strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .ropa-stat span {
+      display: block;
+      font-size: 0.84rem;
+      color: #556070;
+      line-height: 1.5;
+    }
+
+    .ropa-collection-head {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .ropa-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      width: fit-content;
+      padding: 0.4rem 0.78rem;
+      border-radius: 9999px;
+      background: rgba(0, 76, 151, 0.08);
+      color: #004c97;
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ropa-value-grid .feature-card,
+    .ropa-showcase .feature-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.9)),
+        radial-gradient(circle at top right, rgba(255, 122, 26, 0.12), transparent 26%);
+      box-shadow: 0 28px 58px -40px rgba(15, 23, 42, 0.28);
+    }
+
+    .ropa-value-grid .feature-card {
+      height: 100%;
+      padding: 1.35rem 1.3rem;
+    }
+
+    .ropa-value-grid .feature-title,
+    .ropa-showcase .feature-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+    }
+
+    .ropa-value-grid .feature-icon,
+    .ropa-showcase .feature-icon {
+      box-shadow: 0 18px 28px -18px rgba(15, 23, 42, 0.25);
+    }
+
+    #catalogo {
+      position: relative;
+    }
+
+    .ropa-note {
+      padding: 1.15rem 1.2rem;
+      border-radius: 1.4rem;
+      background: linear-gradient(135deg, rgba(0, 76, 151, 0.07), rgba(255, 122, 26, 0.1));
+      border: 1px solid rgba(255, 122, 26, 0.14);
+      color: #334155;
+      box-shadow: 0 22px 42px -34px rgba(15, 23, 42, 0.28);
+    }
+
+    .ropa-size-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .ropa-size-card {
+      padding: 1.15rem;
+      border-radius: 1.45rem;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(9, 34, 144, 0.08);
+      box-shadow: 0 20px 42px -34px rgba(15, 23, 42, 0.26);
+    }
+
+    .ropa-size-card strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.3rem;
+    }
+
+    .ropa-size-card span {
+      display: block;
+      font-size: 0.84rem;
+      color: #556070;
+      line-height: 1.55;
+    }
+
+    .ropa-cta-panel {
+      border-radius: 2rem;
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      background:
+        radial-gradient(circle at top left, rgba(0, 76, 151, 0.16), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(255, 122, 26, 0.18), transparent 30%),
+        linear-gradient(140deg, rgba(255, 255, 255, 0.99), rgba(255, 248, 242, 0.96));
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      box-shadow: 0 32px 70px -42px rgba(15, 23, 42, 0.34);
+    }
+
+    .ropa-cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+
+    .ropa-grid {
+      display: grid;
+      gap: 1.4rem;
+      align-items: start;
+    }
+
+    .ropa-pet-section {
+      padding: clamp(1.2rem, 2vw, 1.6rem);
+      border-radius: 2rem;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.9)),
+        radial-gradient(circle at top right, rgba(255, 122, 26, 0.08), transparent 24%);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      box-shadow: 0 30px 64px -46px rgba(15, 23, 42, 0.24);
+    }
+
+    #catalogo .product-card {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      overflow: hidden;
+      border-radius: 1.8rem;
+      border-color: rgba(9, 34, 144, 0.08);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.84)),
+        radial-gradient(circle at top right, rgba(var(--card-accent-rgb) / 0.16), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(var(--card-accent-rgb) / 0.08), transparent 38%);
+      box-shadow: 0 28px 60px -40px rgba(15, 23, 42, 0.34);
+    }
+
+    #catalogo .product-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(var(--card-accent-rgb) / 0.28);
+      box-shadow: 0 38px 82px -44px rgba(15, 23, 42, 0.42);
+    }
+
+    #catalogo .product-card::before {
+      background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.98), transparent 30%),
+        linear-gradient(180deg, rgba(var(--card-accent-rgb) / 0.18), transparent 45%);
+      opacity: 1;
+    }
+
+    #catalogo .product-image-wrapper {
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem;
+      background:
+        linear-gradient(135deg, rgba(var(--card-accent-rgb) / 0.14), rgba(255, 255, 255, 0.05)),
+        #fff;
+    }
+
+    #catalogo .product-image-wrapper::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 42%;
+      background: linear-gradient(180deg, transparent, rgba(15, 23, 42, 0.1));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    #catalogo .product-image {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      object-position: center;
+      object-fit: contain;
+      border-radius: 1.1rem;
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    #catalogo .product-body {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 auto;
+      gap: 0.85rem;
+      padding: 1.15rem 1.15rem 1.2rem;
+    }
+
+    #catalogo .product-body h3 {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: start;
+      gap: 0.65rem;
+      font-size: 1.03rem;
+      line-height: 1.18;
+    }
+
+    #catalogo .product-body p {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: 0.9rem;
+      line-height: 1.62;
+      color: #475569;
+    }
+
+    #catalogo .product-tag {
+      align-self: flex-start;
+      background: rgba(var(--card-accent-rgb) / 0.14);
+      border: 1px solid rgba(var(--card-accent-rgb) / 0.1);
+      box-shadow: 0 10px 18px -18px rgba(15, 23, 42, 0.25);
+    }
+
+    #catalogo .product-price {
+      padding: 0.75rem 1rem 0.7rem;
+      border-radius: 1.1rem;
+      font-size: 1.22rem;
+      letter-spacing: -0.02em;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(var(--card-accent-rgb) / 0.08));
+    }
+
+    #catalogo .product-chip {
+      padding: 0.36rem 0.64rem;
+      border-color: rgba(var(--card-accent-rgb) / 0.12);
+      background: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    #catalogo .product-actions {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      align-items: stretch;
+    }
+
+    #catalogo .product-link,
+    #catalogo .product-link-secondary {
+      min-height: 2.9rem;
+      font-size: 0.88rem;
+    }
+
+    #catalogo .product-footer {
+      margin-top: 0;
+      gap: 0.7rem;
+      padding-top: 0.15rem;
+    }
+
+    #catalogo .product-price-row {
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    #catalogo .product-card.reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (min-width: 1024px) {
+      .ropa-hero-grid {
+        grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+      }
+
+      .ropa-showcase-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .ropa-hero-signals {
+        grid-template-columns: 1fr;
+      }
+
+      .ropa-stage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ropa-stage-card--tall {
+        grid-row: auto;
+        min-height: 18rem;
+      }
+
+      .ropa-stage-float {
+        position: static;
+        max-width: none;
+      }
+
+      .ropa-showcase {
+        gap: 1rem;
+      }
+
+      #catalogo .product-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .ropa-hero {
+        padding-top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[var(--brand-cream)] text-zinc-900 font-display selection:bg-[var(--brand-orange)] selection:text-white">
+    <nav class="sticky top-0 z-30 border-b border-white/10 backdrop-blur" style="background-color:#004C97;">
+    <div class="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 md:h-16 md:flex-nowrap md:py-0 lg:px-8">
+      <a href="index.html" class="flex shrink-0 items-center gap-3 text-white">
+        <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/90 p-1">
+          <img src="img/kirologoqueda.jpg" alt="KiroCorp" class="h-full w-full rounded-xl object-cover" width="40" height="40" />
+        </span>
+        <span class="text-base font-semibold tracking-tight sm:text-lg">KIROCORP</span>
+      </a>
+      <button id="menuBtn" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú"
+        class="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/30 bg-white/10 text-white transition hover:bg-white/20 md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+      <ul id="menu"
+        class="absolute left-0 right-0 top-full hidden flex-col gap-4 bg-black/85 px-6 py-4 text-white backdrop-blur md:static md:flex md:flex-row md:items-center md:gap-6 md:bg-transparent md:p-0">
+        <li><a href="index.html#productos" class="nav-link"><span class="material-symbols-rounded" aria-hidden="true">pet_supplies</span><span>Productos</span></a></li>
+        <li><a href="ropa-perro.html" class="nav-link"><span class="material-symbols-rounded" aria-hidden="true">checkroom</span><span>Ropitas</span></a></li>
+        <li><a href="index.html#opiniones" class="nav-link"><span class="material-symbols-rounded" aria-hidden="true">forum</span><span>Testimonios</span></a></li>
+        <li><a href="index.html#tienda" class="nav-link"><span class="material-symbols-rounded" aria-hidden="true">call</span><span>Contacto</span></a></li>
+        <li><a href="trabajaconnosotros.html" class="nav-link"><span class="material-symbols-rounded" aria-hidden="true">badge</span><span>Trabaja con nosotros</span></a></li>
+        <li class="md:hidden">
+          <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20hacer%20un%20pedido%20con%20delivery%20GRATIS%20%F0%9F%A5%B0"
+            class="btn btn-primary w-full">
+            Comprar ahora
+          </a>
+        </li>
+      </ul>
+      <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20hacer%20un%20pedido%20con%20delivery%20GRATIS%20%F0%9F%A5%B0"
+        class="btn btn-primary hidden md:inline-flex">
+        Comprar ahora
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section ropa-hero">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid gap-10 ropa-hero-grid items-center">
+          <div class="ropa-hero-copy ropa-hero-shell reveal">
+            <span class="ropa-hero-kicker">
+              <span class="material-symbols-rounded">auto_awesome</span>
+              Atelier Kirocorp
+            </span>
+            <h1 class="ropa-hero-heading">
+              Ropitas con alma
+              <em>boutique</em>
+            </h1>
+            <p class="ropa-hero-lead">
+              Una cabecera de tienda tiene que vender sensación antes que inventario. Esta colección está pensada para
+              perros y gatitos que merecen verse tiernos, cómodos y bien vestidos en paseo, descanso o una foto
+              especial.
+            </p>
+
+            <div class="ropa-chip-bar" aria-label="Atributos destacados">
+              <span class="ropa-chip"><span class="material-symbols-rounded">checkroom</span>Abrigo suave</span>
+              <span class="ropa-chip"><span class="material-symbols-rounded">style</span>Estilo cuidado</span>
+              <span class="ropa-chip"><span class="material-symbols-rounded">pets</span>Perros y gatitos</span>
+              <span class="ropa-chip"><span class="material-symbols-rounded">chat</span>Pedido directo</span>
+            </div>
+
+            <div class="ropa-hero-actions">
+              <a href="#catalogo" class="btn btn-primary w-full sm:w-auto">Explorar colección</a>
+              <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20pedir%20ropita"
+                class="btn btn-secondary w-full sm:w-auto">Recibir asesoría</a>
+            </div>
+
+            <div class="ropa-hero-signals" aria-label="Señales de confianza">
+              <article class="ropa-hero-signal">
+                <strong>Looks para paseo</strong>
+                <span>Prendas que se sienten bonitas sin dejar de ser prácticas.</span>
+              </article>
+              <article class="ropa-hero-signal">
+                <strong>Calce más claro</strong>
+                <span>Tallas simples de revisar antes de cerrar el pedido.</span>
+              </article>
+              <article class="ropa-hero-signal">
+                <strong>Compra por WhatsApp</strong>
+                <span>Consulta talla, stock y entrega desde una sola vista.</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="ropa-showcase ropa-hero-shell reveal">
+            <div class="ropa-hero-stage">
+              <div class="ropa-stage-grid">
+                <article class="ropa-stage-card ropa-stage-card--tall">
+                  <img src="img/ROPA 2.jpeg" alt="Hoodie para mascota" loading="eager" decoding="async" />
+                  <div class="ropa-stage-note">
+                    <strong>Texturas que se ven suaves</strong>
+                    <span>Ideal para una vitrina más tierna y una primera impresión más cuidada.</span>
+                  </div>
+                </article>
+                <article class="ropa-stage-card">
+                  <img src="img/ROPA 1.webp" alt="Abrigo suave para mascota" loading="lazy" decoding="async" />
+                </article>
+                <article class="ropa-stage-card">
+                  <img src="img/ROPA 18.jpg" alt="Chompa delicada para mascota" loading="lazy" decoding="async" />
+                </article>
+              </div>
+
+              <div class="ropa-stage-float ropa-stage-float--top">
+                <span class="material-symbols-rounded">workspace_premium</span>
+                <div>
+                  <strong>Selección cuidada</strong>
+                  <span>Piezas con una lectura más limpia y más elegante.</span>
+                </div>
+              </div>
+
+              <div class="ropa-stage-float ropa-stage-float--bottom">
+                <span class="material-symbols-rounded">favorite</span>
+                <div>
+                  <strong>Hecha para consentir</strong>
+                  <span>Perfecta para mascotas que merecen verse lindas y sentirse cómodas.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 ropa-value-grid">
+          <article class="feature-card feature-card--indigo reveal">
+            <span class="feature-icon feature-icon--indigo material-symbols-rounded">shield</span>
+            <h3 class="feature-title">Comodidad primero</h3>
+            <p class="text-sm leading-relaxed text-slate-700">
+              Prendas pensadas para caminar, acurrucarse y descansar sin sentirse pesadas.
+            </p>
+          </article>
+          <article class="feature-card feature-card--sunset reveal">
+            <span class="feature-icon feature-icon--sunset material-symbols-rounded">rainy</span>
+            <h3 class="feature-title">Para frío y paseo</h3>
+            <p class="text-sm leading-relaxed text-slate-700">
+              Hay opciones para lluvia ligera, tardes frías y salidas donde quieres un look más pulido.
+            </p>
+          </article>
+          <article class="feature-card feature-card--sky reveal">
+            <span class="feature-icon feature-icon--sky material-symbols-rounded">style</span>
+            <h3 class="feature-title">Tiernas en foto</h3>
+            <p class="text-sm leading-relaxed text-slate-700">
+              Siluetas y colores que lucen bien en contenido, regalo y momentos especiales.
+            </p>
+          </article>
+          <article class="feature-card feature-card--indigo reveal">
+            <span class="feature-icon feature-icon--indigo material-symbols-rounded">shopping_bag</span>
+            <h3 class="feature-title">Elección sencilla</h3>
+            <p class="text-sm leading-relaxed text-slate-700">
+              Todo está ordenado para comparar, elegir y pedir sin perder tiempo entre demasiados pasos.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogo" class="section">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="ropa-collection-head reveal mx-auto max-w-3xl text-center">
+          <span class="ropa-kicker">Boutique Kirocorp</span>
+          <h2 class="section-title">Elige la ropita que mejor le queda</h2>
+          <p class="section-subtitle">
+            La colección está separada por tipo de mascota para que encontrar la prenda ideal se sienta más natural,
+            rápido y bonito.
+          </p>
+        </div>
+
+        <div id="catalogGridStatic" class="mt-12 space-y-16"
+          aria-label="Catálogo de ropitas">
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 0 76 151;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 1.webp" alt="Chompa Polar Nube" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">XS-XL</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Abrigo cálido</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">checkroom</span>Chompa Polar Nube</h3>
+              <p>Chompa ligera y calentita para salidas frescas, fotos bonitas y paseos tranquilos.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 45.00</span>
+                  <div class="product-chips"><span class="product-chip">Polar</span><span class="product-chip">Suave</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Chompa%20Polar%20Nube%20(S/.%2045.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 255 122 26;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 2.jpeg" alt="Hoodie Urbano Kiro" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Top venta</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Street style</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">checkroom</span>Hoodie Urbano Kiro</h3>
+              <p>Sudadera con capucha para un look moderno que se siente cómodo durante todo el día.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 52.00</span>
+                  <div class="product-chips"><span class="product-chip">Algodón</span><span class="product-chip">Capucha</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Hoodie%20Urbano%20Kiro%20(S/.%2052.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 9 34 144;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 3.jpg" alt="Impermeable Lluvia" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Lluvia</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Clima húmedo</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">rainy</span>Impermeable Lluvia</h3>
+              <p>Prenda práctica para días de lluvia, fácil de poner y pensada para mantener seco el pelaje.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 58.00</span>
+                  <div class="product-chips"><span class="product-chip">Antisplash</span><span class="product-chip">Ligero</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Impermeable%20Lluvia%20(S/.%2058.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 250 171 48;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 4.webp" alt="Chaleco Acolchado" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Nuevo</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Abrigo ligero</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">workspace_premium</span>Chaleco Acolchado</h3>
+              <p>Una opción abrigadora para perros que necesitan calor sin perder libertad de movimiento.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 60.00</span>
+                  <div class="product-chips"><span class="product-chip">Acolchado</span><span class="product-chip">Cómodo</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Chaleco%20Acolchado%20(S/.%2060.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 255 122 26;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ropa 5.webp" alt="Bandana Fiesta" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Ajustable</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Accesorio</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">auto_awesome</span>Bandana Fiesta</h3>
+              <p>Bandana decorativa para fotos, reuniones y salidas donde quieres un toque más tierno.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 22.00</span>
+                  <div class="product-chips"><span class="product-chip">Lavable</span><span class="product-chip">Ligera</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Bandana%20Fiesta%20(S/.%2022.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 0 76 151;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 6" alt="Vestido Floral" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Edición linda</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Salida especial</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">style</span>Vestido Floral</h3>
+              <p>Vestido fresco y adorable para perritas que roban miradas en cualquier ocasión.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 48.00</span>
+                  <div class="product-chips"><span class="product-chip">Fresco</span><span class="product-chip">Lindo</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Vestido%20Floral%20(S/.%2048.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 9 34 144;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 7.jpeg" alt="Camiseta Sport" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Confort</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Uso diario</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">fitness_center</span>Camiseta Sport</h3>
+              <p>Camiseta ligera pensada para paseos cortos, casa o días activos sin exceso de tela.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 34.00</span>
+                  <div class="product-chips"><span class="product-chip">Sport</span><span class="product-chip">Ligera</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Camiseta%20Sport%20(S/.%2034.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 255 122 26;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 8" alt="Pijama Sueño" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Noche</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Descanso</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">bedtime</span>Pijama Sueño</h3>
+              <p>Pijama cómoda para noches frías, perfecta para perros que duermen abrigados y tranquilos.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 39.00</span>
+                  <div class="product-chips"><span class="product-chip">Suave</span><span class="product-chip">Caliente</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Pijama%20Sue%C3%B1o%20(S/.%2039.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 0 76 151;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ropa9.jpg" alt="Abrigo Sherpa" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Premium</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Frío intenso</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">ac_unit</span>Abrigo Sherpa</h3>
+              <p>Abrigo con textura sherpa que aporta calor y un acabado elegante para el invierno.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 68.00</span>
+                  <div class="product-chips"><span class="product-chip">Sherpa</span><span class="product-chip">Cálido</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Abrigo%20Sherpa%20(S/.%2068.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 250 171 48;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ropa 10.jpg" alt="Bufanda Cozy" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Ajuste fácil</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Detalle de invierno</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">favorite</span>Bufanda Cozy</h3>
+              <p>Bufanda corta para complementar outfits y sumar protección en días fríos.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 24.00</span>
+                  <div class="product-chips"><span class="product-chip">Cozy</span><span class="product-chip">Tierno</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Bufanda%20Cozy%20(S/.%2024.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 9 34 144;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ropa 11.webp" alt="Capa Térmica" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Abrigo</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Temporada fría</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">shield</span>Capa Térmica</h3>
+              <p>Diseño envolvente para paseos de mañana o noche con más abrigo y mejor cobertura.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 55.00</span>
+                  <div class="product-chips"><span class="product-chip">Térmica</span><span class="product-chip">Cubre</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Capa%20T%C3%A9rmica%20(S/.%2055.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 255 122 26;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 12.jpeg" alt="Suéter Navidad" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Festivo</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Temporada festiva</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">celebration</span>Suéter Navidad</h3>
+              <p>Un suéter con vibra alegre para sesiones de fotos y fechas especiales con tu engreído.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 46.00</span>
+                  <div class="product-chips"><span class="product-chip">Navidad</span><span class="product-chip">Foto</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Su%C3%A9ter%20Navidad%20(S/.%2046.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 0 76 151;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 13.jpg" alt="Chaleco Reflectivo" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Seguridad</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Paseo nocturno</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">visibility</span>Chaleco Reflectivo</h3>
+              <p>Ideal para caminatas al atardecer; ayuda a que tu perro sea más visible en la calle.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 49.00</span>
+                  <div class="product-chips"><span class="product-chip">Reflectivo</span><span class="product-chip">Seguro</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Chaleco%20Reflectivo%20(S/.%2049.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 255 122 26;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 14.webp" alt="Enterizo Suave" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Comodidad</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Todo en uno</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">pets</span>Enterizo Suave</h3>
+              <p>Enterizo cómodo para perros que necesitan una prenda completa, fácil y bien ajustada.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 57.00</span>
+                  <div class="product-chips"><span class="product-chip">Enterizo</span><span class="product-chip">Cómodo</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Enterizo%20Suave%20(S/.%2057.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 250 171 48;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 15.jpeg" alt="Polo Rayas" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Básico</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Casual</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">checkroom</span>Polo Rayas</h3>
+              <p>Polo simple y versátil, perfecto para un look limpio y cotidiano sin recargar.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 31.00</span>
+                  <div class="product-chips"><span class="product-chip">Casual</span><span class="product-chip">Ligero</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Polo%20Rayas%20(S/.%2031.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 9 34 144;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 16.jpeg" alt="Capa Brisa" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Mini</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Clima húmedo</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">water_drop</span>Capa Brisa</h3>
+              <p>Capa práctica para días frescos, fácil de poner y pensada para acompañar con comodidad.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 63.00</span>
+                  <div class="product-chips"><span class="product-chip">Ligera</span><span class="product-chip">Práctica</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Capa%20Brisa%20(S/.%2063.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 255 122 26;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 17.jpg" alt="Bandana Brillo" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Fotos</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Accesorio</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">star</span>Bandana Brillo</h3>
+              <p>Bandana decorativa para fotos, visitas o celebraciones con un toque más tierno.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 44.00</span>
+                  <div class="product-chips"><span class="product-chip">Show</span><span class="product-chip">Lindo</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Bandana%20Brillo%20(S/.%2044.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 0 76 151;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 18.jpg" alt="Chompa Nube" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Suavecito</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Abrigo cálido</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">favorite</span>Chompa Nube</h3>
+              <p>Chompa ligera y calentita para ratos frescos, siestas y salidas tranquilas.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 51.00</span>
+                  <div class="product-chips"><span class="product-chip">Polar</span><span class="product-chip">Cómoda</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Chompa%20Nube%20(S/.%2051.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 250 171 48;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 19.webp" alt="Saco Suave" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Premium</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Salida premium</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">workspace_premium</span>Saco Suave</h3>
+              <p>Saco con caída elegante para un estilo más pulido sin perder comodidad.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 67.00</span>
+                  <div class="product-chips"><span class="product-chip">Elegante</span><span class="product-chip">Paseo</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Saco%20Suave%20(S/.%2067.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-product-card style="--card-accent-rgb: 9 34 144;">
+            <div class="product-image-wrapper" data-product-media>
+              <img src="img/ROPA 20.avif" alt="Set Descanso" class="product-image" loading="lazy" decoding="async" />
+              <span class="product-badge">Combo</span>
+            </div>
+            <div class="product-body" data-product-content>
+              <span class="product-tag">Completo</span>
+              <h3><span class="product-icon material-symbols-rounded" aria-hidden="true" style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">shopping_bag</span>Set Descanso</h3>
+              <p>Conjunto pensado para completar un look ordenado y práctico en una sola compra.</p>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price"><small>Desde</small>S/. 72.00</span>
+                  <div class="product-chips"><span class="product-chip">Set</span><span class="product-chip">Listo</span></div>
+                </div>
+                <div class="product-actions">
+                  <a href="#tallas" class="product-link-secondary">Ver tallas</a>
+                  <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20Set%20Descanso%20(S/.%2072.00)." class="product-link">Comprar</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tallas" class="section bg-white">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <span class="ropa-kicker">Guía de talla</span>
+          <h2 class="section-title">La talla correcta hace que todo se vea mejor</h2>
+          <p class="section-subtitle">
+            Antes de pedir, revisa pecho, cuello y largo. Una buena medida mejora el calce, la comodidad y la
+            experiencia desde el primer uso.
+          </p>
+        </div>
+
+        <div class="mt-10 ropa-size-shell">
+          <div class="ropa-size-grid">
+            <article class="ropa-size-card reveal">
+              <strong>XS / Mini</strong>
+              <span>Para mascotas pequeñas o cachorros. Ideal para bandanas, polos y abrigos ligeros.</span>
+            </article>
+            <article class="ropa-size-card reveal">
+              <strong>S / Pequeña</strong>
+              <span>Buen ajuste para razas pequeñas que necesitan comodidad y libertad de movimiento.</span>
+            </article>
+            <article class="ropa-size-card reveal">
+              <strong>M / Mediana</strong>
+              <span>Funciona muy bien en sudaderas, chalecos y prendas para paseo o clima fresco.</span>
+            </article>
+            <article class="ropa-size-card reveal">
+              <strong>L - XL / Grande</strong>
+              <span>Recomendado para mascotas grandes que necesitan prendas amplias y fáciles de poner.</span>
+            </article>
+          </div>
+
+          <div class="mt-6 ropa-note reveal">
+            <strong class="block text-sm font-extrabold text-zinc-900">Consejo Kirocorp</strong>
+            Si tienes duda entre dos tallas, escríbenos antes de comprar. Es mejor elegir con medida real que solo por
+            raza o edad.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="mx-auto max-w-4xl px-6 lg:px-8">
+        <div class="ropa-cta-panel text-center ropa-cta-shell reveal">
+          <h2 class="section-title">¿Te ayudamos a elegir la indicada?</h2>
+          <p class="section-subtitle">
+            Cuéntanos si buscas abrigo, algo más ligero o una prenda para foto especial y te guiamos según talla,
+            estilo y momento de uso.
+          </p>
+
+          <div class="ropa-cta-actions mt-8">
+            <a href="https://wa.me/51916566758?text=Hola%20Kirocorp,%20quiero%20comprar%20ropita"
+              class="sp-btn-primary">
+              <span class="material-symbols-rounded">chat</span> Hablar por WhatsApp
+            </a>
+            <a href="mailto:hola@kirocorp.pe" class="sp-btn-secondary">
+              <span class="material-symbols-rounded">mail</span> Consultar por correo
+            </a>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-zinc-200">
+            <a href="index.html" class="sp-btn-outline-dark inline-flex items-center gap-2">
+              Volver al inicio
+              <span class="material-symbols-rounded" style="font-size: 1.1rem;">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <footer class="sp-footer">
+    <div class="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
+      <div class="space-y-5 gs-footer-item">
+        <div class="flex items-center gap-3">
+          <img src="img/kirologoqueda.jpg" alt="KiroCorp" class="h-14 w-14 rounded-2xl bg-white object-cover p-1"
+            width="56" height="56" />
+          <span class="text-xl font-bold tracking-tight text-white">Kirocorp</span>
+        </div>
+        <p class="text-sm leading-relaxed text-zinc-400 max-w-sm">
+          Boutique de ropitas para mascotas con piezas suaves, lindas y fáciles de elegir para paseo, descanso y
+          momentos especiales.
+        </p>
+      </div>
+      <div class="gs-footer-item">
+        <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-zinc-100">Contacto Directo</h3>
+        <ul class="space-y-3 text-sm text-zinc-400">
+          <li>
+            <a class="flex items-center gap-2 transition hover:text-white" href="tel:+51916566758">
+              <span class="material-symbols-rounded text-zinc-500">phone_iphone</span> +51 916 566 758
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center gap-2 transition hover:text-white" href="mailto:hola@kirocorp.pe">
+              <span class="material-symbols-rounded text-zinc-500">mail</span> hola@kirocorp.pe
+            </a>
+          </li>
+          <li class="flex items-center gap-2 pt-2">
+            <span class="material-symbols-rounded text-green-400">local_shipping</span>
+            <span class="text-zinc-300 font-medium">Envíos a todo el Perú</span>
+          </li>
+        </ul>
+      </div>
+      <div class="gs-footer-item">
+        <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-zinc-100">Comunidad</h3>
+        <div class="flex items-center gap-3">
+          <a class="sp-social-link" aria-label="WhatsApp" href="https://wa.me/51916566758">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor">
+              <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06.02C5.61.02.38 5.25.38 11.7c0 2.06.54 4.06 1.57 5.82L0 24l6.64-1.9a11.68 11.68 0 0 0 5.4 1.37h.01c6.44 0 11.67-5.23 11.67-11.67a11.62 11.62 0 0 0-3.2-8.32ZM12.07 21.3a9.58 9.58 0 0 1-4.88-1.34l-.35-.21-3.94 1.13 1.13-3.84-.23-.39a9.55 9.55 0 0 1-1.45-5.03c0-5.3 4.31-9.61 9.62-9.61 2.57 0 4.98 1 6.8 2.81a9.58 9.58 0 0 1 2.82 6.81c0 5.3-4.31 9.61-9.62 9.61Zm5.5-7.19c-.3-.15-1.77-.87-2.05-.97-.28-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.11 3.22 5.12 4.52.72.31 1.28.49 1.71.63.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.08-.13-.27-.2-.57-.35Z" />
+            </svg>
+          </a>
+          <a class="sp-social-link" aria-label="Instagram" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor">
+              <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.37.06 2.63.35 3.61 1.33.98.97 1.26 2.24 1.32 3.61.06 1.26.07 1.64.07 4.83s-.01 3.57-.07 4.83c-.06 1.37-.34 2.64-1.32 3.61-.98.98-2.24 1.27-3.61 1.33-1.27.06-1.65.07-4.85.07s-3.57-.01-4.84-.07c-1.37-.06-2.64-.35-3.61-1.33-.98-.97-1.26-2.24-1.32-3.61C2.16 15.57 2.16 15.19 2.16 12s0-3.57.06-4.83c.06-1.37.34-2.64 1.32-3.61.97-.98 2.24-1.27 3.61-1.33C8.43 2.17 8.81 2.16 12 2.16Z" />
+            </svg>
+          </a>
+          <a class="sp-social-link" aria-label="Facebook" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor">
+              <path d="M22.68 0H1.32A1.32 1.32 0 0 0 0 1.32v21.36C0 23.4.6 24 1.32 24h11.5v-9.29H9.85V11.2h2.97V8.41c0-2.94 1.79-4.54 4.41-4.54 1.25 0 2.33.09 2.64.14v3.07h-1.82c-1.43 0-1.7.68-1.7 1.67v2.45h3.41l-.44 3.53h-2.97V24h5.8A1.32 1.32 0 0 0 24 22.68V1.32A1.32 1.32 0 0 0 22.68 0Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 bg-black/40 py-6">
+      <div class="mx-auto max-w-7xl px-6 text-center text-xs text-zinc-500 lg:px-8 gs-footer-item">
+        © <span id="year"></span> KiroCorp. Todos los derechos reservados. Hecho para mascotas que merecen verse bien.
+      </div>
+    </div>
+  </footer>
+  <div class="floating-wa-wrapper">
+    <div class="floating-wa-popup" id="waPopup">
+      <button class="floating-wa-popup-close" id="waPopupClose" aria-label="Cerrar">×</button>
+      <p>¿Buscas una ropita para paseo, frío o una foto especial? Escríbenos y te ayudamos a elegir.</p>
+    </div>
+    <a href="https://wa.me/51916566758?text=Hola%20Kirocorp%2C%20quiero%20hablar%20con%20ustedes" class="floating-whatsapp" aria-label="Hablar por WhatsApp" id="waBtn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06.02C5.61.02.38 5.25.38 11.7c0 2.06.54 4.06 1.57 5.82L0 24l6.64-1.9a11.68 11.68 0 0 0 5.4 1.37h.01c6.44 0 11.67-5.23 11.67-11.67a11.62 11.62 0 0 0-3.2-8.32ZM12.07 21.3a9.58 9.58 0 0 1-4.88-1.34l-.35-.21-3.94 1.13 1.13-3.84-.23-.39a9.55 9.55 0 0 1-1.45-5.03c0-5.3 4.31-9.61 9.62-9.61 2.57 0 4.98 1 6.8 2.81a9.58 9.58 0 0 1 2.82 6.81c0 5.3-4.31 9.61-9.62 9.61Zm5.5-7.19c-.3-.15-1.77-.87-2.05-.97-.28-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.11 3.22 5.12 4.52.72.31 1.28.49 1.71.63.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.08-.13-.27-.2-.57-.35Z" />
+      </svg>
+    </a>
+  </div>
+<script>
+    const catalog = [
+      { name: "Chompa Polar Nube", tag: "Abrigo cálido", icon: "checkroom", visual: "Polar suave", badge: "XS-XL", image: "img/ROPA 1.webp", price: "S/. 45.00", desc: "Chompa ligera y calentita para salidas frescas, fotos bonitas y paseos tranquilos.", chips: ["Polar", "Suave"], accent: "0 76 151" },
+      { name: "Hoodie Urbano Kiro", tag: "Street style", icon: "checkroom", visual: "Capucha cómoda", badge: "Top venta", image: "img/ROPA 2.jpeg", price: "S/. 52.00", desc: "Sudadera con capucha para un look moderno que se siente cómodo durante todo el día.", chips: ["Algodón", "Capucha"], accent: "255 122 26" },
+      { name: "Impermeable Lluvia", tag: "Clima húmedo", icon: "rainy", visual: "Protección ligera", badge: "Lluvia", image: "img/ROPA 3.jpg", price: "S/. 58.00", desc: "Prenda práctica para días de lluvia, fácil de poner y pensada para mantener seco el pelaje.", chips: ["Antisplash", "Ligero"], accent: "9 34 144" },
+      { name: "Chaleco Acolchado", tag: "Abrigo ligero", icon: "workspace_premium", visual: "Relleno suave", badge: "Nuevo", image: "img/ROPA 4.webp", price: "S/. 60.00", desc: "Una opción abrigadora para perros que necesitan calor sin perder libertad de movimiento.", chips: ["Acolchado", "Cómodo"], accent: "250 171 48" },
+      { name: "Bandana Fiesta", tag: "Accesorio", icon: "auto_awesome", visual: "Detalle lindo", badge: "Ajustable", image: "img/ropa 5.webp", price: "S/. 22.00", desc: "Bandana decorativa para fotos, reuniones y salidas donde quieres un toque más tierno.", chips: ["Lavable", "Ligera"], accent: "255 122 26" },
+      { name: "Vestido Floral", tag: "Salida especial", icon: "style", visual: "Estilo dulce", badge: "Edición linda", image: "img/ROPA 6", price: "S/. 48.00", desc: "Vestido fresco y adorable para perritas que roban miradas en cualquier ocasión.", chips: ["Fresco", "Lindo"], accent: "0 76 151" },
+      { name: "Camiseta Sport", tag: "Uso diario", icon: "fitness_center", visual: "Movimiento libre", badge: "Confort", image: "img/ROPA 7.jpeg", price: "S/. 34.00", desc: "Camiseta ligera pensada para paseos cortos, casa o días activos sin exceso de tela.", chips: ["Sport", "Ligera"], accent: "9 34 144" },
+      { name: "Pijama Sueño", tag: "Descanso", icon: "bedtime", visual: "Suave para dormir", badge: "Noche", image: "img/ROPA 8", price: "S/. 39.00", desc: "Pijama cómoda para noches frías, perfecta para perros que duermen abrigados y tranquilos.", chips: ["Suave", "Caliente"], accent: "255 122 26" },
+      { name: "Abrigo Sherpa", tag: "Frío intenso", icon: "ac_unit", visual: "Interior peludito", badge: "Premium", image: "img/ropa9.jpg", price: "S/. 68.00", desc: "Abrigo con textura sherpa que aporta calor y un acabado elegante para el invierno.", chips: ["Sherpa", "Cálido"], accent: "0 76 151" },
+      { name: "Bufanda Cozy", tag: "Detalle de invierno", icon: "favorite", visual: "Tierno y suave", badge: "Ajuste fácil", image: "img/ropa 10.jpg", price: "S/. 24.00", desc: "Bufanda corta para complementar outfits y sumar protección en días fríos.", chips: ["Cozy", "Tierno"], accent: "250 171 48" },
+      { name: "Capa Térmica", tag: "Temporada fría", icon: "shield", visual: "Capa protectora", badge: "Abrigo", image: "img/ropa 11.webp", price: "S/. 55.00", desc: "Diseño envolvente para paseos de mañana o noche con más abrigo y mejor cobertura.", chips: ["Térmica", "Cubre"], accent: "9 34 144" },
+      { name: "Suéter Navidad", tag: "Temporada festiva", icon: "celebration", visual: "Look navideño", badge: "Festivo", image: "img/ROPA 12.jpeg", price: "S/. 46.00", desc: "Un suéter con vibra alegre para sesiones de fotos y fechas especiales con tu engreído.", chips: ["Navidad", "Foto"], accent: "255 122 26" },
+      { name: "Chaleco Reflectivo", tag: "Paseo nocturno", icon: "visibility", visual: "Visible de noche", badge: "Seguridad", image: "img/ROPA 13.jpg", price: "S/. 49.00", desc: "Ideal para caminatas al atardecer; ayuda a que tu perro sea más visible en la calle.", chips: ["Reflectivo", "Seguro"], accent: "0 76 151" },
+      { name: "Enterizo Suave", tag: "Todo en uno", icon: "pets", visual: "Cobertura total", badge: "Comodidad", image: "img/ROPA 14.webp", price: "S/. 57.00", desc: "Enterizo cómodo para perros que necesitan una prenda completa, fácil y bien ajustada.", chips: ["Enterizo", "Cómodo"], accent: "255 122 26" },
+      { name: "Polo Rayas", tag: "Casual", icon: "checkroom", visual: "Rayas modernas", badge: "Básico", image: "img/ROPA 15.jpeg", price: "S/. 31.00", desc: "Polo simple y versátil, perfecto para un look limpio y cotidiano sin recargar.", chips: ["Casual", "Ligero"], accent: "250 171 48" },
+      { name: "Gabardina Mini", tag: "Clima húmedo", icon: "water_drop", visual: "Protección ligera", badge: "Mini", image: "img/ropa gato 3.webp", price: "S/. 63.00", desc: "Gabardina práctica para días frescos, fácil de poner y pensada para acompañar con comodidad.", chips: ["Ligera", "Práctica"], accent: "9 34 144" },
+      { name: "Disfraz Estrella", tag: "Accesorio", icon: "star", visual: "Detalle lindo", badge: "Fotos", image: "img/ropa gato 5.jpg", price: "S/. 44.00", desc: "Prenda decorativa para fotos, visitas o celebraciones con un toque más tierno.", chips: ["Show", "Lindo"], accent: "255 122 26" },
+      { name: "Chompa Teddy", tag: "Abrigo cálido", icon: "favorite", visual: "Suave y abrigada", badge: "Suavecito", image: "img/ropa gato 2.jpeg", price: "S/. 51.00", desc: "Chompa ligera y calentita para ratos frescos, siestas y salidas tranquilas.", chips: ["Polar", "Cómoda"], accent: "0 76 151" },
+      { name: "Saco Urbano", tag: "Salida premium", icon: "workspace_premium", visual: "Look elegante", badge: "Premium", image: "img/ropa gato 1.jpeg", price: "S/. 67.00", desc: "Saco con caída elegante para un estilo más pulido sin perder comodidad.", chips: ["Elegante", "Paseo"], accent: "250 171 48" },
+      { name: "Set Paseo", tag: "Completo", icon: "shopping_bag", visual: "Listo para salir", badge: "Combo", image: "img/ropa gato 6.webp", price: "S/. 72.00", desc: "Conjunto pensado para completar un look ordenado y práctico en una sola compra.", chips: ["Set", "Listo"], accent: "9 34 144" },
+      { name: "Pijama Gatito", tag: "Descanso", icon: "bedtime", visual: "Suave para dormir", badge: "Nuevo", image: "img/ropa gato 4.jpg", price: "S/. 39.00", desc: "Pijama cómoda para gatitos que duermen abrigados y tranquilos.", chips: ["Suave", "Caliente"], accent: "255 122 26" }
+    ];
+
+    const catalogGrid = document.getElementById("catalogGridStatic");
+    const waBase = "https://wa.me/51916566758?text=";
+    const slugify = (value) =>
+      value
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+
+    if (catalogGrid) {
+      const renderCards = (items) =>
+        items.map((item) => {
+          const message = `Hola Kirocorp, quiero comprar ${item.name} (${item.price}).`;
+          const waLink = `${waBase}${encodeURIComponent(message)}`;
+          const detailUrl = `ropa/${slugify(item.name)}.html`;
+
+          return `
+            <article class="product-card reveal" data-product-card style="--card-accent-rgb: ${item.accent};">
+              <div class="product-image-wrapper" data-product-media>
+                <img src="${item.image}" alt="${item.name}" class="product-image" loading="lazy" decoding="async" />
+                <span class="product-badge">${item.badge}</span>
+              </div>
+              <div class="product-body" data-product-content>
+                <span class="product-tag">${item.tag}</span>
+                <h3>
+                  <span class="product-icon material-symbols-rounded" aria-hidden="true"
+                    style="background: linear-gradient(135deg, rgb(var(--card-accent-rgb)), rgba(17, 24, 39, 0.94));">${item.icon}</span>
+                  ${item.name}
+                </h3>
+                <p>${item.desc}</p>
+                <div class="product-footer">
+                  <div class="product-price-row">
+                    <span class="product-price"><small>Desde</small>${item.price}</span>
+                    <div class="product-chips">
+                      ${item.chips.map((chip) => `<span class="product-chip">${chip}</span>`).join("")}
+                    </div>
+                  </div>
+                  <div class="product-actions">
+                    <a href="${detailUrl}" class="product-link-secondary">Ver ficha</a>
+                    <a href="${waLink}" class="product-link">Comprar</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join("");
+
+      const dogCatalog = catalog.slice(0, 15);
+      const catCatalog = catalog.slice(15);
+
+      catalogGrid.innerHTML = `
+        <section class="space-y-6 ropa-pet-section">
+          <div class="ropa-collection-head reveal mx-auto max-w-3xl text-center">
+            <span class="ropa-kicker">Colección para perro</span>
+            <h3 class="section-title">Looks suaves para paseo, abrigo y descanso</h3>
+            <p class="section-subtitle">Piezas pensadas para días frescos, salidas tranquilas y mascotas que se ven mejor con un look bien cuidado.</p>
+          </div>
+          <div class="ropa-grid grid gap-8 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4" aria-label="Catálogo para perro">
+            ${renderCards(dogCatalog)}
+          </div>
+        </section>
+        <section class="mt-16 space-y-6 ropa-pet-section">
+          <div class="ropa-collection-head reveal mx-auto max-w-3xl text-center">
+            <span class="ropa-kicker">Colección para gatito</span>
+            <h3 class="section-title">Prendas ligeras para calma, ternura y momentos especiales</h3>
+            <p class="section-subtitle">Una selección más delicada para gatitos que merecen comodidad, suavidad y una presencia bonita en casa o en foto.</p>
+          </div>
+          <div class="ropa-grid grid gap-8 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4" aria-label="Catálogo para gatito">
+            ${renderCards(catCatalog)}
+          </div>
+        </section>
+      `;
+    }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+

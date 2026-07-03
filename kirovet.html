@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIROVET — Atención Veterinaria a Domicilio</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #012149;
+    --orange: #ee741e;
+    --navy-light: #0a3060;
+    --navy-dark: #010f26;
+    --orange-light: #ff8a38;
+    --white: #ffffff;
+    --cream: #faf8f5;
+    --gray: #6b7280;
+    --gray-light: #f3f4f6;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--white);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 72px;
+    background: rgba(1, 33, 73, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 36px; height: 36px;
+    background: var(--orange);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 20px; height: 20px; fill: white; }
+  .logo-text { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; color: white; letter-spacing: -0.02em; }
+  .logo-sub { font-size: 0.65rem; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; text-transform: uppercase; display: block; margin-top: -4px; }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.875rem; font-weight: 400; letter-spacing: 0.02em; transition: color 0.2s; }
+  .nav-links a:hover { color: white; }
+
+  .nav-cta {
+    background: var(--orange);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 8px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--orange-light); transform: translateY(-1px); }
+  .nav-cta svg { width: 16px; height: 16px; fill: currentColor; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: calc(100vh - 70px);
+    background: var(--navy-dark);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    position: relative;
+    overflow: hidden;
+    margin-top: 70px;
+    padding: 10px 0 18px;
+  }
+
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(238,116,30,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255,255,255,0.03) 0%, transparent 40%);
+  }
+
+  .hero-grid-lines {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: flex-start;
+    padding: 18px 5% 18px 8%;
+    position: relative; z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(238,116,30,0.12);
+    border: 1px solid rgba(238,116,30,0.3);
+    color: var(--orange);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.95rem;
+    width: fit-content;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--orange);
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.2rem, 3.9vw, 3.7rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: white;
+    margin-bottom: 0.85rem;
+    max-width: 12ch;
+  }
+  .hero-title span { color: var(--orange); }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    max-width: 440px;
+    margin-bottom: 1.15rem;
+    font-weight: 300;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+
+  .btn-primary {
+    background: var(--orange);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+    transition: all 0.25s;
+    box-shadow: 0 4px 20px rgba(238,116,30,0.35);
+  }
+  .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(238,116,30,0.45); }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.25s;
+  }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+
+  .hero-stats {
+    display: flex; gap: 2.5rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .stat-item { }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+  }
+  .stat-num span { color: var(--orange); }
+  .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .hero-right {
+    position: relative;
+    display: flex; align-items: flex-start; justify-content: center;
+    padding: 2px 8% 8px 4%;
+    z-index: 2;
+    overflow: visible;
+  }
+
+  .hero-image-wrap {
+    position: relative;
+    width: min(100%, 390px);
+    max-width: 390px;
+  }
+
+  .hero-image-main {
+    width: 100%;
+    aspect-ratio: 3/4;
+    max-height: calc(100vh - 155px);
+    border-radius: 24px;
+    background: linear-gradient(135deg, var(--navy-light) 0%, #0a4080 100%);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-image-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Vet illustration inside hero */
+  .hero-vet-svg {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .hero-card-float {
+    position: absolute;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 16px 20px;
+  }
+
+  .card-emergency {
+    top: 18px; right: -14px; left: auto; bottom: auto;
+    text-align: center;
+  }
+  .card-emergency .num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.2rem; font-weight: 800; color: var(--orange); line-height: 1;
+  }
+  .card-emergency .label { font-size: 0.7rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+
+  .card-rating {
+    bottom: 14px; left: -14px; top: auto; right: auto;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .card-rating .stars { color: #fbbf24; font-size: 0.8rem; letter-spacing: 1px; }
+  .card-rating .text { font-size: 0.7rem; color: rgba(255,255,255,0.7); }
+  .card-rating .big { font-family: 'Syne', sans-serif; font-weight: 700; color: white; font-size: 1.1rem; }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 100px 8%; }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--navy);
+  }
+
+  .section-title.light { color: white; }
+
+  /* ── WHY ── */
+  .why { background: var(--cream); }
+
+  .why-header { text-align: center; margin-bottom: 4rem; }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: rgba(1,33,73,0.08);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .feature-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    transition: background 0.3s;
+  }
+  .feature-card:hover { background: var(--navy); }
+  .feature-card:hover .feat-title { color: white; }
+  .feature-card:hover .feat-desc { color: rgba(255,255,255,0.5); }
+  .feature-card:hover .feat-icon { background: rgba(238,116,30,0.2); color: var(--orange); }
+
+  .feat-icon {
+    width: 52px; height: 52px;
+    background: rgba(1,33,73,0.07);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    color: var(--navy);
+    transition: all 0.3s;
+  }
+
+  .feat-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+  }
+
+  .feat-desc {
+    font-size: 0.875rem;
+    color: var(--gray);
+    line-height: 1.6;
+    transition: color 0.3s;
+  }
+
+  /* ── SERVICES ── */
+  .services { background: var(--navy-dark); }
+
+  .services-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 3.5rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .service-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 18px;
+    padding: 2rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--orange);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .service-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-4px); }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--orange);
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .service-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+
+  .service-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.6;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how { background: var(--white); }
+
+  .how-header { text-align: center; margin-bottom: 4rem; }
+
+  .steps-row {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+    position: relative;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 0.5rem;
+  }
+
+  .steps-row::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 6%;
+    right: 6%;
+    height: 2px;
+    background: linear-gradient(90deg,
+      rgba(238,116,30,0.96) 0%,
+      rgba(238,116,30,0.28) 12%,
+      rgba(1,33,73,0.14) 50%,
+      rgba(238,116,30,0.28) 88%,
+      rgba(238,116,30,0.96) 100%);
+  }
+
+  .step {
+    text-align: center;
+    padding: 0 0.5rem;
+    position: relative;
+  }
+
+  .step-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid rgba(1,33,73,0.12);
+    box-shadow: 0 14px 34px rgba(1, 33, 73, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.4rem;
+    font-size: 1.5rem;
+    color: var(--navy-light);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+  }
+  .step:hover .step-circle {
+    transform: translateY(-3px);
+    border-color: rgba(238,116,30,0.34);
+    box-shadow: 0 18px 38px rgba(1, 33, 73, 0.12);
+    color: var(--orange);
+  }
+
+  .step-num {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 24px;
+    height: 24px;
+    background: var(--orange);
+    border-radius: 50%;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 22px rgba(238,116,30,0.25);
+  }
+
+  .step-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    line-height: 1.15;
+    min-height: 2.5em;
+  }
+
+  .step-desc {
+    max-width: 220px;
+    margin: 0 auto;
+    font-size: 0.92rem;
+    color: var(--gray);
+    line-height: 1.65;
+  }
+
+  /* ── TESTIMONIAL ── */
+  .testimonials { background: var(--cream); }
+
+  .testi-header { text-align: center; margin-bottom: 3.5rem; }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .testi-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(1,33,73,0.07);
+    transition: all 0.3s;
+  }
+  .testi-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(1,33,73,0.08); }
+
+  .testi-stars { color: #fbbf24; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1rem; }
+
+  .testi-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--orange));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: white;
+  }
+  .testi-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--navy); }
+  .testi-role { font-size: 0.75rem; color: var(--gray); }
+
+  /* ── COVERAGE ── */
+  .coverage { background: var(--navy); }
+
+  .coverage-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .coverage-left .section-label { color: rgba(238,116,30,0.9); }
+
+  .coverage-desc {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin: 1.5rem 0 2.5rem;
+    font-weight: 300;
+  }
+
+  .zones-list {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+    list-style: none; margin-bottom: 2.5rem;
+  }
+  .zones-list li {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.875rem; color: rgba(255,255,255,0.7);
+  }
+  .zones-list li::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--orange); border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .coverage-right {
+    position: relative;
+  }
+
+  .map-placeholder {
+    aspect-ratio: 1;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .map-placeholder svg { width: 70%; height: 70%; opacity: 0.2; }
+
+  .map-ping {
+    position: absolute;
+    width: 12px; height: 12px;
+    background: var(--orange);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(238,116,30,0.3);
+  }
+  .map-ping.p1 { top: 35%; left: 45%; }
+  .map-ping.p2 { top: 55%; left: 38%; }
+  .map-ping.p3 { top: 48%; left: 55%; }
+  .map-ping::after {
+    content: '';
+    position: absolute; inset: -8px;
+    border-radius: 50%;
+    border: 1px solid var(--orange);
+    animation: ripple 2s infinite;
+    opacity: 0;
+  }
+  .map-ping.p2::after { animation-delay: 0.7s; }
+  .map-ping.p3::after { animation-delay: 1.4s; }
+  @keyframes ripple {
+    0% { transform: scale(0.5); opacity: 0.5; }
+    100% { transform: scale(2.5); opacity: 0; }
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--orange);
+    padding: 80px 8%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(0,0,0,0.1) 0%, transparent 50%);
+  }
+  .cta-inner { position: relative; z-index: 1; }
+
+  .cta-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .cta-desc {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  .btn-white {
+    background: white;
+    color: var(--orange);
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+    transition: all 0.25s;
+    font-family: 'Syne', sans-serif;
+  }
+  .btn-white:hover { background: var(--navy); color: white; transform: translateY(-2px); }
+
+  .btn-outline-white {
+    background: transparent;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+    border: 2px solid rgba(255,255,255,0.5);
+    transition: all 0.25s;
+  }
+  .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy-dark);
+    padding: 60px 8% 40px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-brand .logo-text { font-size: 1.4rem; }
+  .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.7; margin-top: 1rem; max-width: 260px; }
+
+  .footer-contact { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-contact a { font-size: 0.85rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+  .footer-contact a:hover { color: var(--orange); }
+
+  .footer-col h4 { font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 700; color: white; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.25rem; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: white; }
+
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+  .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+  .footer-social { display: flex; gap: 12px; }
+  .social-btn {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+  }
+  .social-btn:hover { background: var(--orange); color: white; }
+
+  /* WhatsApp floating */
+  .wa-float {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    width: 56px; height: 56px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+    z-index: 999;
+    transition: transform 0.3s;
+    text-decoration: none;
+  }
+  .wa-float:hover { transform: scale(1.1); }
+  .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+  /* Scroll animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: flex; padding: 0 8% 18px; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .testi-grid { grid-template-columns: 1fr; }
+    .coverage-inner { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .steps-row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem 1.2rem;
+      padding-top: 0;
+    }
+    .steps-row::before { display: none; }
+    .step { padding: 0; }
+    .step-title { min-height: 0; }
+  }
+
+  @media (max-width: 640px) {
+    .how-header { margin-bottom: 2.75rem; }
+    .steps-row {
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+    }
+    .step-desc {
+      max-width: 280px;
+    }
+  }
+
+  /* Typography override */
+  body,
+  h1, h2, h3, h4, h5, h6,
+  p, a, li, span, button, input, textarea, select,
+  .logo-text,
+  .hero-title,
+  .hero-badge,
+  .hero-desc,
+  .stat-num,
+  .stat-label,
+  .section-label,
+  .section-title,
+  .feat-title,
+  .feat-desc,
+  .service-num,
+  .service-title,
+  .service-desc,
+  .step-title,
+  .step-desc,
+  .testi-stars,
+  .testi-text,
+  .testi-name,
+  .testi-role,
+  .coverage-desc,
+  .zones-list,
+  .zone-item,
+  .cta-title,
+  .cta-desc,
+  .btn-primary,
+  .btn-secondary,
+  .btn-white,
+  .btn-outline-white,
+  .footer-col h4,
+  .footer-brand p,
+  .footer-contact a,
+  .footer-copy {
+    font-family: 'Manrope', sans-serif !important;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+    </div>
+    <div>
+      <span class="logo-text">KIROVET</span>
+      <span class="logo-sub">Atención a domicilio</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#como-funciona">Cómo funciona</a></li>
+    <li><a href="#cobertura">Cobertura</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="https://wa.me/51916566758" class="nav-cta">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-left">
+    <div class="hero-badge">Emergencias veterinarias 24/7</div>
+    <h1 class="hero-title">
+      Atención veterinaria<br>a domicilio,<br>
+      <span>cuando más<br>lo necesitas</span>
+    </h1>
+    <p class="hero-desc">Emergencias 24 horas, consultas y tratamientos profesionales. Nos movemos por tu mascota en Lima Metropolitana.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/51916566758" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Solicitar atención
+      </a>
+      <a href="tel:011234567" class="btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        (01) 123 4567
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">24<span>/7</span></div>
+        <div class="stat-label">Disponible</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">+<span>500</span></div>
+        <div class="stat-label">Mascotas atendidas</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4.<span>9★</span></div>
+        <div class="stat-label">Valoración</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-image-wrap">
+      <div class="hero-image-main">
+        <img src="img/kiroservicios/KIROVET.png" alt="Kiro Vet atención veterinaria a domicilio" />
+      </div>
+
+      <div class="hero-card-float card-emergency">
+        <div class="num">24/7</div>
+        <div class="label">Emergencias</div>
+        <div class="label">365 días del año</div>
+      </div>
+
+      <div class="hero-card-float card-rating">
+        <div>
+          <div class="big">4.9</div>
+          <div class="stars">★★★★★</div>
+          <div class="text">+200 reseñas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY KIROVET -->
+<section class="why" id="por-que">
+  <div class="why-header reveal">
+    <div class="section-label">¿Por qué elegirnos?</div>
+    <h2 class="section-title">Cuidado profesional,<br>en la comodidad de tu hogar</h2>
+  </div>
+
+  <div class="features-grid reveal">
+    <div class="feature-card">
+      <div class="feat-icon">🏠</div>
+      <div class="feat-title">Atención a domicilio</div>
+      <div class="feat-desc">Vamos hasta tu hogar para cuidar a tu mascota sin estrés.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">⏰</div>
+      <div class="feat-title">Emergencias 24 horas</div>
+      <div class="feat-desc">Disponibles cuando más nos necesitas, sin horarios fijos.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🩺</div>
+      <div class="feat-title">Profesionales calificados</div>
+      <div class="feat-desc">Médicos veterinarios con experiencia y vocación real.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">💛</div>
+      <div class="feat-title">Trato amable y personalizado</div>
+      <div class="feat-desc">Cuidado con amor, respeto y paciencia hacia cada mascota.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🛡️</div>
+      <div class="feat-title">Seguridad y confianza</div>
+      <div class="feat-desc">Protocolos profesionales garantizados para el bienestar.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🐾</div>
+      <div class="feat-title">Perros y gatos</div>
+      <div class="feat-desc">Atendemos todas las razas y edades con el mismo cuidado.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="servicios">
+  <div class="services-header reveal">
+    <div>
+      <div class="section-label" style="color:rgba(238,116,30,0.9)">Nuestros servicios</div>
+      <h2 class="section-title light">Todo lo que tu<br>mascota necesita</h2>
+    </div>
+    <a href="https://wa.me/51916566758" class="btn-primary">Ver todos los servicios</a>
+  </div>
+
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-icon">🚨</div>
+      <div class="service-title">Emergencias 24 horas</div>
+      <div class="service-desc">Atención inmediata ante cualquier urgencia veterinaria.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-icon">🔍</div>
+      <div class="service-title">Consulta a domicilio</div>
+      <div class="service-desc">Evaluación completa y diagnóstico profesional en casa.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-icon">💉</div>
+      <div class="service-title">Aplicación de medicamentos</div>
+      <div class="service-desc">Inyecciones, sueros y tratamientos especializados.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-icon">🩹</div>
+      <div class="service-title">Curaciones y procedimientos</div>
+      <div class="service-desc">Heridas, suturas, limpiezas y procedimientos básicos.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-icon">📊</div>
+      <div class="service-title">Control y seguimiento</div>
+      <div class="service-desc">Monitoreo del estado de salud y evolución del tratamiento.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-icon">📞</div>
+      <div class="service-title">Orientación médica</div>
+      <div class="service-desc">Te guiamos para actuar correctamente mientras llegamos.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="como-funciona">
+  <div class="how-header reveal">
+    <div class="section-label">Nuestro proceso</div>
+    <h2 class="section-title">Así te atendemos paso a paso</h2>
+  </div>
+
+  <div class="steps-row reveal">
+    <div class="step">
+      <div class="step-circle">
+        💬
+        <span class="step-num">1</span>
+      </div>
+      <div class="step-title">Nos escribes o llamas</div>
+      <div class="step-desc">Cuéntanos qué sucede con tu mascota por WhatsApp o teléfono.</div>
+    </div>
+    <div class="step">
+      <div class="step-circle">
+        📋
+        <span class="step-num">2</span>
+      </div>
+      <div class="step-title">Evaluamos la urgencia</div>
+      <div class="step-desc">Te orientamos y definimos la prioridad de atención.</div>
+    </div>
+    <div class="step">
+      <div class="step-circle">
+        🚗
+        <span class="step-num">3</span>
+      </div>
+      <div class="step-title">Enviamos al veterinario</div>
+      <div class="step-desc">Asignamos al profesional más cercano a tu ubicación.</div>
+    </div>
+    <div class="step">
+      <div class="step-circle">
+        🏠
+        <span class="step-num">4</span>
+      </div>
+      <div class="step-title">Llegamos a tu domicilio</div>
+      <div class="step-desc">Atención rápida, segura y en la comodidad de tu hogar.</div>
+    </div>
+    <div class="step">
+      <div class="step-circle">
+        💛
+        <span class="step-num">5</span>
+      </div>
+      <div class="step-title">Tu mascota recibe el mejor cuidado</div>
+      <div class="step-desc">Nos aseguramos de su bienestar y te damos seguimiento.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonios">
+  <div class="testi-header reveal">
+    <div class="section-label">Lo que dicen nuestros clientes</div>
+    <h2 class="section-title">Confianza que se construye<br>con cada atención</h2>
+  </div>
+
+  <div class="testi-grid reveal">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Excelente atención, llegaron rapidísimo cuando mi perrito lo necesitaba. El veterinario fue muy profesional y amable. 100% recomendados."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">MF</div>
+        <div>
+          <div class="testi-name">María Fernanda</div>
+          <div class="testi-role">Mamá de Toby 🐶</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Mi gata tuvo una emergencia a las 2am y en menos de 40 minutos ya tenía al veterinario en casa. Servicio increíble, los volvería a llamar sin duda."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">CR</div>
+        <div>
+          <div class="testi-name">Carlos Romero</div>
+          <div class="testi-role">Papá de Luna 🐱</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Muy profesionales y puntuales. Mi golden estaba muy asustado pero el veterinario lo tranquilizó perfectamente. Gran servicio."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AP</div>
+        <div>
+          <div class="testi-name">Ana Patricia</div>
+          <div class="testi-role">Mamá de Max 🐕</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section class="coverage" id="cobertura">
+  <div class="coverage-inner">
+    <div class="coverage-left reveal">
+      <div class="section-label">Cobertura</div>
+      <h2 class="section-title light">Estamos cerca<br>de ti</h2>
+      <p class="coverage-desc">Atendemos en Lima Metropolitana con cobertura en las principales zonas de la ciudad.</p>
+      <ul class="zones-list">
+        <li>Miraflores</li>
+        <li>San Isidro</li>
+        <li>Surco</li>
+        <li>La Molina</li>
+        <li>Barranco</li>
+        <li>Chorrillos</li>
+        <li>San Borja</li>
+        <li>Jesús María</li>
+        <li>Lince</li>
+        <li>Pueblo Libre</li>
+        <li>Magdalena</li>
+        <li>Y más zonas...</li>
+      </ul>
+      <a href="https://wa.me/51916566758" class="btn-primary">Consultar cobertura</a>
+    </div>
+    <div class="coverage-right reveal">
+      <div class="map-placeholder">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 10 L190 190 L10 190 Z" stroke="white" stroke-width="1.5" fill="none"/>
+          <circle cx="100" cy="100" r="80" stroke="white" stroke-width="1" fill="none" stroke-dasharray="4 4"/>
+          <circle cx="100" cy="100" r="50" stroke="white" stroke-width="0.5" fill="none"/>
+          <line x1="10" y1="100" x2="190" y2="100" stroke="white" stroke-width="0.5"/>
+          <line x1="100" y1="10" x2="100" y2="190" stroke="white" stroke-width="0.5"/>
+        </svg>
+        <div class="map-ping p1"></div>
+        <div class="map-ping p2"></div>
+        <div class="map-ping p3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <h2 class="cta-title">Emergencias no avisan,<br>nosotros sí respondemos.</h2>
+    <p class="cta-desc">Atención veterinaria a domicilio 24 horas. Siempre listos para cuidar a tu mascota.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/51916566758" class="btn-white">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Solicitar por WhatsApp
+      </a>
+      <a href="tel:011234567" class="btn-outline-white">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Llamar ahora
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contacto">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:white"><path d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z"/></svg>
+        </div>
+        <div>
+          <span class="logo-text" style="color:white">KIROVET</span>
+          <span class="logo-sub">Atención veterinaria a domicilio</span>
+        </div>
+      </div>
+      <p>Somos tu aliado en el cuidado de tu mascota. Profesionales veterinarios disponibles 24/7 en Lima Metropolitana.</p>
+      <div class="footer-contact">
+        <a href="tel:+51916566758">+51 916 566 758</a>
+        <a href="tel:011234567">(01) 123 4567</a>
+        <a href="mailto:hola@kirovet.pe">hola@kirovet.pe</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#como-funciona">¿Cómo funciona?</a></li>
+        <li><a href="#testimonios">Reseñas</a></li>
+        <li><a href="#cobertura">Cobertura</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Información</h4>
+      <ul>
+        <li><a href="#">Sobre nosotros</a></li>
+        <li><a href="#">Preguntas frecuentes</a></li>
+        <li><a href="#">Términos y condiciones</a></li>
+        <li><a href="#">Política de privacidad</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Atención 24/7</h4>
+      <ul>
+        <li><a href="#">Siempre que nos necesites, estamos para tu mascota.</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 KIROVET. Todos los derechos reservados.</div>
+    <div class="footer-social">
+      <a href="#" class="social-btn">ig</a>
+      <a href="#" class="social-btn">fb</a>
+      <a href="#" class="social-btn">tk</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/51916566758" class="wa-float" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Stagger children in grids
+  document.querySelectorAll('.features-grid, .services-grid, .testi-grid, .steps-row').forEach(grid => {
+    grid.querySelectorAll('.feature-card, .service-card, .testi-card, .step').forEach((child, i) => {
+      child.style.transitionDelay = `${i * 0.07}s`;
+    });
+  });
+</script>
+</body>
+</html>

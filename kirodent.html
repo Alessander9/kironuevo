@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIRODENT - Higiene Dental Para Mascotas</title>
+<meta name="description" content="Kiro Dent ofrece higiene dental preventiva, evaluacion oral y cuidado profesional para perros y gatos.">
+<link rel="icon" href="img/kirologoqueda.jpg" type="image/jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #012149;
+  --orange: #ee741e;
+  --navy-light: #0a3060;
+  --navy-dark: #010f26;
+  --orange-light: #ff8c38;
+  --white: #ffffff;
+  --cream: #faf9f7;
+  --gray: #6b7280;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Manrope', sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--navy-dark); }
+::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 2px; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 70px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 6%;
+  background: rgba(1,33,73,0.97);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.logo-mark {
+  width: 38px; height: 38px;
+  background: var(--orange);
+  border-radius: 11px;
+  display: grid; place-items: center;
+  font-weight: 800; font-size: 1rem;
+  color: white; letter-spacing: -0.04em;
+}
+.logo-copy .name { font-weight: 800; font-size: 1.2rem; color: white; letter-spacing: -0.02em; line-height: 1; }
+.logo-copy .sub { font-size: 0.63rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.07em; }
+
+.nav-links { display: flex; gap: 1.8rem; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; font-weight: 400; transition: color 0.2s; }
+.nav-links a:hover { color: white; }
+
+.nav-wa {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--orange); color: white;
+  padding: 9px 18px; border-radius: 9px;
+  font-size: 0.85rem; font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.nav-wa:hover { background: var(--orange-light); transform: translateY(-1px); }
+.nav-wa svg { width: 15px; height: 15px; fill: white; }
+
+.hero {
+  min-height: calc(100vh - 70px);
+  background: var(--navy-dark);
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: start;
+  position: relative; overflow: hidden;
+  margin-top: 70px;
+  padding: 10px 0 18px;
+}
+
+.hero-noise {
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.4; pointer-events: none;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(238,116,30,0.12) 0%, transparent 70%);
+  top: -100px; left: -100px;
+  pointer-events: none;
+}
+
+.hero-glow2 {
+  position: absolute;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+  bottom: 0; right: 0;
+  pointer-events: none;
+}
+
+.hero-left {
+  display: flex; flex-direction: column; justify-content: flex-start;
+  padding: 8px 5% 18px 8%;
+  position: relative; z-index: 2;
+}
+
+.hero-pills { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 0.95rem; }
+.pill {
+  padding: 5px 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 100px;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.pill.active { border-color: var(--orange); color: var(--orange); background: rgba(238,116,30,0.1); }
+
+.hero-h1 {
+  font-size: clamp(2.2rem, 3.9vw, 3.7rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  color: white;
+  margin-bottom: 0.85rem;
+  max-width: 12ch;
+}
+.hero-h1 em { font-style: normal; color: var(--orange); }
+
+.hero-p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  max-width: 460px;
+  margin-bottom: 1.15rem;
+  font-weight: 300;
+}
+
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1rem; }
+
+.btn-orange {
+  display: flex; align-items: center; gap: 9px;
+  background: var(--orange); color: white;
+  padding: 13px 24px; border-radius: 10px;
+  font-size: 0.9rem; font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(238,116,30,0.38);
+  transition: all 0.25s;
+}
+.btn-orange:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(238,116,30,0.48); }
+.btn-orange svg { width: 16px; height: 16px; fill: white; }
+
+.btn-ghost {
+  display: flex; align-items: center; gap: 9px;
+  background: transparent; color: white;
+  padding: 13px 24px; border-radius: 10px;
+  font-size: 0.9rem; font-weight: 400;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: all 0.25s;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.45); background: rgba(255,255,255,0.05); }
+.btn-ghost svg { width: 16px; height: 16px; fill: currentColor; }
+
+.hero-badges {
+  display: flex; gap: 1.8rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.badge-val { font-size: 1.6rem; font-weight: 800; color: white; line-height: 1; }
+.badge-val span { color: var(--orange); }
+.badge-lbl { font-size: 0.72rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.07em; margin-top: 3px; }
+
+.hero-right {
+  position: relative; z-index: 2;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 2px 6% 8px 2%;
+  overflow: visible;
+}
+
+.hero-visual { width: min(100%, 390px); max-width: 390px; position: relative; }
+
+.hero-img-frame {
+  width: 100%;
+  aspect-ratio: 3/4;
+  max-height: calc(100vh - 155px);
+  border-radius: 28px 28px 0 0;
+  background: linear-gradient(160deg, #143862 0%, #1f5287 50%, #0a2a55 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.float-card {
+  position: absolute;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 14px 18px;
+  z-index: 3;
+}
+
+.float-card.top-right { top: 18px; right: -14px; }
+.fc-icon { font-size: 1.3rem; margin-bottom: 4px; }
+.fc-label { font-size: 0.65rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; }
+.fc-val { font-weight: 700; font-size: 0.9rem; color: white; margin-top: 1px; }
+
+.float-card.bottom-left {
+  bottom: 14px; left: -14px;
+  display: flex; align-items: center; gap: 12px;
+}
+.fc-num { font-size: 2rem; font-weight: 800; color: var(--orange); line-height: 1; }
+.fc-text .top { font-size: 0.7rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.07em; }
+.fc-text .bot { font-size: 0.7rem; color: rgba(255,255,255,0.35); }
+
+.sec { padding: 96px 8%; }
+
+.sec-label {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--orange);
+  margin-bottom: 0.6rem;
+}
+.sec-title {
+  font-size: clamp(1.75rem, 2.8vw, 2.6rem);
+  font-weight: 800; line-height: 1.1;
+  letter-spacing: -0.025em; color: var(--navy);
+}
+.sec-title.light { color: white; }
+
+.services { background: var(--cream); }
+
+.srv-head { text-align: center; margin-bottom: 4rem; }
+.srv-head .sec-title { margin-bottom: 1rem; }
+.srv-head p { font-size: 0.95rem; color: var(--gray); max-width: 560px; margin: 0 auto; }
+
+.srv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(1,33,73,0.08);
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.srv-card {
+  background: white;
+  padding: 32px 28px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background 0.25s, transform 0.25s;
+}
+.srv-card:hover { background: #fff8f3; transform: translateY(-3px); }
+.srv-num { font-size: 0.8rem; color: rgba(1,33,73,0.35); font-weight: 700; margin-bottom: 2.5rem; }
+.srv-name { font-size: 1.2rem; font-weight: 800; color: var(--navy); line-height: 1.15; margin-bottom: 0.75rem; }
+.srv-desc { font-size: 0.88rem; color: var(--gray); line-height: 1.7; max-width: 270px; }
+
+.benefits { background: var(--navy-dark); position: relative; overflow: hidden; }
+.benefits::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(238,116,30,0.12), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.03), transparent 35%);
+  pointer-events: none;
+}
+
+.ben-head {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 0.95fr 1.05fr;
+  gap: 3rem; align-items: end;
+  margin-bottom: 3.2rem;
+}
+.ben-head p { font-size: 0.95rem; color: rgba(255,255,255,0.52); line-height: 1.8; max-width: 560px; }
+
+.ben-grid {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.ben-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px;
+  padding: 1.5rem;
+  min-height: 220px;
+  display: flex; flex-direction: column;
+}
+.ben-icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  background: rgba(238,116,30,0.12);
+  color: var(--orange);
+  display: grid; place-items: center;
+  font-size: 1.25rem; margin-bottom: 1.2rem;
+}
+.ben-title { font-size: 1.05rem; font-weight: 700; color: white; line-height: 1.2; margin-bottom: 0.75rem; }
+.ben-desc { font-size: 0.84rem; line-height: 1.7; color: rgba(255,255,255,0.48); }
+
+.how { background: white; }
+
+.how-grid {
+  display: grid; grid-template-columns: 1.05fr 0.95fr;
+  gap: 3rem; align-items: center;
+}
+
+.how-steps { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+
+.step {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding: 1.15rem 1.2rem;
+  border-radius: 18px;
+  background: var(--cream);
+  border: 1px solid rgba(1,33,73,0.06);
+}
+.step-num {
+  width: 38px; height: 38px; border-radius: 12px;
+  background: var(--navy); color: white;
+  display: grid; place-items: center;
+  font-size: 0.88rem; font-weight: 700;
+}
+.step-copy h4 { font-size: 0.96rem; font-weight: 800; color: var(--navy); margin-bottom: 0.35rem; }
+.step-copy p { font-size: 0.84rem; color: var(--gray); line-height: 1.7; }
+
+.how-visual {
+  position: relative;
+  min-height: 620px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #f4f5f7 0%, #fff 100%);
+  border: 1px solid rgba(1,33,73,0.06);
+}
+.how-visual img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.how-card {
+  position: absolute;
+  right: 20px; top: 20px;
+  background: rgba(1,33,73,0.84);
+  color: white;
+  border-radius: 18px;
+  padding: 1rem 1.1rem;
+  min-width: 170px;
+  backdrop-filter: blur(12px);
+}
+.how-card .mini { font-size: 0.68rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.08em; }
+.how-card strong { display: block; font-size: 1rem; margin-top: 0.35rem; }
+
+.testi { background: var(--cream); }
+.testi-head { text-align: center; margin-bottom: 3rem; }
+.testi-head p { font-size: 0.95rem; color: var(--gray); max-width: 560px; margin: 1rem auto 0; line-height: 1.75; }
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.t-card {
+  background: white; border-radius: 20px;
+  padding: 1.8rem;
+  border: 1px solid rgba(1,33,73,0.06);
+  transition: all 0.3s;
+}
+.t-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(1,33,73,0.08); }
+.t-stars { color: #f59e0b; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 1rem; }
+.t-quote {
+  font-size: 0.88rem; line-height: 1.75; color: var(--gray);
+  font-style: italic; margin-bottom: 1.5rem;
+}
+.t-quote::before { content: '"'; color: var(--orange); font-size: 1.5rem; font-style: normal; line-height: 0; vertical-align: -0.4em; margin-right: 2px; }
+
+.t-author { display: flex; align-items: center; gap: 12px; }
+.t-ava {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), var(--orange));
+  display: grid; place-items: center;
+  font-weight: 700;
+  font-size: 0.8rem; color: white;
+}
+.t-name { font-weight: 700; font-size: 0.88rem; color: var(--navy); }
+.t-sub { font-size: 0.74rem; color: var(--gray); }
+
+.cta-sec {
+  background: var(--navy-dark);
+  padding: 0 8%;
+  position: relative; overflow: hidden;
+}
+
+.cta-inner {
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: center; gap: 3rem;
+  padding: 80px 0;
+  position: relative; z-index: 1;
+}
+
+.cta-bg-shape {
+  position: absolute;
+  width: 700px; height: 400px;
+  background: radial-gradient(ellipse, rgba(238,116,30,0.1) 0%, transparent 70%);
+  top: 50%; left: -100px; transform: translateY(-50%);
+}
+
+.cta-text .cta-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  font-weight: 800; line-height: 1.1;
+  letter-spacing: -0.03em; color: white;
+  margin-bottom: 0.75rem;
+}
+.cta-text p { font-size: 1rem; color: rgba(255,255,255,0.5); font-weight: 300; max-width: 600px; }
+
+.cta-actions { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+
+.btn-wa {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--orange); color: white;
+  padding: 14px 26px; border-radius: 12px;
+  font-size: 0.95rem; font-weight: 600;
+  text-decoration: none; white-space: nowrap;
+  box-shadow: 0 4px 24px rgba(238,116,30,0.4);
+  transition: all 0.25s;
+}
+.btn-wa:hover { background: var(--orange-light); transform: translateY(-2px); }
+.btn-wa svg { width: 18px; height: 18px; fill: white; }
+
+.btn-call {
+  display: flex; align-items: center; gap: 10px;
+  background: transparent; color: rgba(255,255,255,0.65);
+  padding: 12px 26px; border-radius: 12px;
+  font-size: 0.9rem; font-weight: 400;
+  text-decoration: none; white-space: nowrap;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.25s;
+}
+.btn-call:hover { color: white; border-color: rgba(255,255,255,0.4); }
+.btn-call svg { width: 16px; height: 16px; fill: currentColor; }
+
+footer {
+  background: #010d1f;
+  padding: 56px 8% 32px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.footer-main {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem; margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.fb-brand p { font-size: 0.83rem; color: rgba(255,255,255,0.38); line-height: 1.7; margin: 1rem 0 1.2rem; max-width: 300px; }
+.fb-contacts { display: flex; flex-direction: column; gap: 6px; }
+.fb-contacts a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+.fb-contacts a:hover { color: var(--orange); }
+
+.fb-col h5 { font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.2rem; }
+.fb-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.fb-col ul li a { font-size: 0.83rem; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+.fb-col ul li a:hover { color: white; }
+
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+.footer-copy { font-size: 0.77rem; color: rgba(255,255,255,0.25); }
+.footer-social { display: flex; gap: 8px; }
+.soc {
+  width: 34px; height: 34px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px; display: grid; place-items: center;
+  color: rgba(255,255,255,0.4); font-size: 0.75rem;
+  text-decoration: none; transition: all 0.2s;
+}
+.soc:hover { background: var(--orange); color: white; }
+
+.wa-fab {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 54px; height: 54px;
+  border-radius: 50%;
+  background: #25D366;
+  display: grid; place-items: center;
+  box-shadow: 0 12px 24px rgba(37,211,102,0.3);
+  z-index: 250;
+}
+.wa-fab svg { width: 28px; height: 28px; fill: white; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1080px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 18px 8% 12px; }
+  .hero-right { padding: 0 8% 18px; }
+  .srv-grid { grid-template-columns: repeat(2, 1fr); }
+  .ben-head, .how-grid, .cta-inner, .footer-main { grid-template-columns: 1fr; }
+  .ben-grid { grid-template-columns: repeat(2, 1fr); }
+  .testi-grid { grid-template-columns: 1fr; }
+  .cta-actions { align-items: flex-start; }
+}
+
+@media (max-width: 780px) {
+  nav { padding: 0 5%; }
+  .nav-links { display: none; }
+  .logo-copy .sub { display: none; }
+  .hero-h1 { font-size: clamp(2.2rem, 11vw, 3.2rem); }
+  .hero-badges { flex-wrap: wrap; gap: 1rem; }
+  .srv-grid, .ben-grid { grid-template-columns: 1fr; }
+  .hero-right { padding: 0 5% 18px; }
+  .hero-visual { max-width: 100%; }
+  .float-card.top-right { right: 10px; top: 18px; }
+  .float-card.bottom-left { left: 12px; bottom: 18px; }
+  .how-visual { min-height: 420px; }
+  .footer-main { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .sec { padding: 76px 6%; }
+  .hero { margin-top: 70px; padding: 6px 0 14px; }
+  .hero-left { padding: 10px 6% 14px; }
+  .hero-right { padding: 0 6% 16px; }
+  .hero-ctas, .cta-actions { width: 100%; }
+  .btn-orange, .btn-ghost, .btn-wa, .btn-call { width: 100%; justify-content: center; }
+  .footer-main, .footer-bottom { grid-template-columns: 1fr; display: grid; gap: 1.5rem; }
+  .footer-bottom { text-align: left; }
+  .nav-wa span { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#inicio" class="logo">
+    <div class="logo-mark">KD</div>
+    <div class="logo-copy">
+      <div class="name">KIRODENT</div>
+      <div class="sub">Higiene dental para mascotas</div>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#como-funciona">Como funciona</a></li>
+    <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+
+  <a href="https://wa.me/51916566758?text=Hola%20Kiro%20Dent,%20quiero%20reservar%20mi%20evaluacion" class="nav-wa" target="_blank" rel="noreferrer">
+    <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.07 0C5.56 0 .24 5.29.24 11.8c0 2.08.54 4.1 1.57 5.89L0 24l6.5-1.7a11.76 11.76 0 0 0 5.57 1.42h.01c6.51 0 11.83-5.29 11.83-11.8 0-3.16-1.23-6.12-3.39-8.44zM12.08 21.7h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.86 1.01 1.03-3.76-.24-.39a9.83 9.83 0 0 1-1.51-5.18c0-5.44 4.43-9.87 9.89-9.87 2.64 0 5.12 1.03 6.98 2.9a9.8 9.8 0 0 1 2.9 6.97c0 5.45-4.44 9.88-9.89 9.88zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.89-.79-1.49-1.76-1.67-2.06-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.37s-1.05 1.03-1.05 2.5 1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.13 4.54.72.31 1.28.5 1.72.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+</nav>
+
+<section class="hero" id="inicio">
+  <div class="hero-noise"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+
+  <div class="hero-left">
+    <div class="hero-pills">
+      <span class="pill active">Prevencion</span>
+      <span class="pill">Bienestar</span>
+      <span class="pill">Confianza</span>
+    </div>
+
+    <h1 class="hero-h1">
+      Higiene dental<br>que mejora su<br><em>bienestar</em> y su<br>rutina diaria
+    </h1>
+
+    <p class="hero-p">
+      Kiro Dent ofrece evaluacion oral, higiene preventiva y orientacion clara para perros y gatos. Una experiencia profesional pensada para cuidar su boca con mas orden, comodidad y seguimiento.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="https://wa.me/51916566758?text=Hola%20Kiro%20Dent,%20quiero%20reservar%20mi%20evaluacion" class="btn-orange" target="_blank" rel="noreferrer">
+        <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.07 0C5.56 0 .24 5.29.24 11.8c0 2.08.54 4.1 1.57 5.89L0 24l6.5-1.7a11.76 11.76 0 0 0 5.57 1.42h.01c6.51 0 11.83-5.29 11.83-11.8 0-3.16-1.23-6.12-3.39-8.44zM12.08 21.7h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.86 1.01 1.03-3.76-.24-.39a9.83 9.83 0 0 1-1.51-5.18c0-5.44 4.43-9.87 9.89-9.87 2.64 0 5.12 1.03 6.98 2.9a9.8 9.8 0 0 1 2.9 6.97c0 5.45-4.44 9.88-9.89 9.88zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.89-.79-1.49-1.76-1.67-2.06-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.37s-1.05 1.03-1.05 2.5 1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.13 4.54.72.31 1.28.5 1.72.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/></svg>
+        Reserva tu evaluacion
+      </a>
+      <a href="tel:+51916566758" class="btn-ghost">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        (01) 234 4567
+      </a>
+    </div>
+
+    <div class="hero-badges">
+      <div class="hero-badge-item">
+        <div class="badge-val">2</div>
+        <div class="badge-lbl">Perros y gatos</div>
+      </div>
+      <div class="hero-badge-item">
+        <div class="badge-val"><span>Oral</span></div>
+        <div class="badge-lbl">Cuidado preventivo</div>
+      </div>
+      <div class="hero-badge-item">
+        <div class="badge-val">+Claro</div>
+        <div class="badge-lbl">Orientacion simple</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="float-card top-right">
+        <div class="fc-icon">+</div>
+        <div class="fc-label">Atencion</div>
+        <div class="fc-val">Preventiva y cercana</div>
+      </div>
+
+      <div class="hero-img-frame">
+        <img src="img/kiroservicios/KIRODENT.png" alt="Kiro Dent higiene dental para mascotas">
+      </div>
+
+      <div class="float-card bottom-left">
+        <div class="fc-num">Dental</div>
+        <div class="fc-text">
+          <div class="top">Objetivo</div>
+          <div class="fc-val">Mas salud oral</div>
+          <div class="bot">y una boca mas comoda</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services sec reveal" id="servicios">
+  <div class="srv-head">
+    <div class="sec-label">Servicios</div>
+    <h2 class="sec-title">Una propuesta pensada para ordenar el cuidado oral de tu mascota</h2>
+    <p>Desde la evaluacion inicial hasta la orientacion para casa, Kiro Dent busca que el proceso sea claro, preventivo y facil de sostener.</p>
+  </div>
+
+  <div class="srv-grid">
+    <article class="srv-card">
+      <div class="srv-num">01</div>
+      <div>
+        <div class="srv-name">Evaluacion dental</div>
+        <div class="srv-desc">Revisamos la situacion oral de tu mascota y te explicamos con claridad que necesita y por que.</div>
+      </div>
+    </article>
+    <article class="srv-card">
+      <div class="srv-num">02</div>
+      <div>
+        <div class="srv-name">Higiene preventiva</div>
+        <div class="srv-desc">Atencion enfocada en mejorar limpieza, comodidad oral y cuidado general de forma responsable.</div>
+      </div>
+    </article>
+    <article class="srv-card">
+      <div class="srv-num">03</div>
+      <div>
+        <div class="srv-name">Revision oral general</div>
+        <div class="srv-desc">Buscamos señales de sarro, irritacion o desgaste para actuar con mayor anticipacion.</div>
+      </div>
+    </article>
+    <article class="srv-card">
+      <div class="srv-num">04</div>
+      <div>
+        <div class="srv-name">Orientacion para casa</div>
+        <div class="srv-desc">Te compartimos recomendaciones practicas para continuar el cuidado oral desde tu rutina diaria.</div>
+      </div>
+    </article>
+    <article class="srv-card">
+      <div class="srv-num">05</div>
+      <div>
+        <div class="srv-name">Atencion para perros y gatos</div>
+        <div class="srv-desc">Adaptamos la experiencia segun especie, edad y condicion general de cada mascota.</div>
+      </div>
+    </article>
+    <article class="srv-card">
+      <div class="srv-num">06</div>
+      <div>
+        <div class="srv-name">Reserva simple por WhatsApp</div>
+        <div class="srv-desc">Agendas, resuelves dudas y entiendes el proceso sin friccion innecesaria.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="benefits sec reveal">
+  <div class="ben-head">
+    <div>
+      <div class="sec-label">Propuesta de valor</div>
+      <h2 class="sec-title light">Prevencion, claridad y bienestar oral en una sola experiencia</h2>
+    </div>
+    <p>Kiro Dent no busca solo una visita puntual. La idea es ayudarte a entender mejor el estado oral de tu mascota y sostener un cuidado mas ordenado, accesible y confiable.</p>
+  </div>
+
+  <div class="ben-grid">
+    <article class="ben-card">
+      <div class="ben-icon">01</div>
+      <div class="ben-title">Mas claridad</div>
+      <div class="ben-desc">Explicamos el proceso y las necesidades reales de tu mascota con un lenguaje directo y entendible.</div>
+    </article>
+    <article class="ben-card">
+      <div class="ben-icon">02</div>
+      <div class="ben-title">Mejor aliento y limpieza</div>
+      <div class="ben-desc">Una higiene oral mas cuidada aporta comodidad y una convivencia mas agradable en casa.</div>
+    </article>
+    <article class="ben-card">
+      <div class="ben-icon">03</div>
+      <div class="ben-title">Prevencion temprana</div>
+      <div class="ben-desc">Detectar señales a tiempo permite ordenar mejor el cuidado y evitar que el problema avance.</div>
+    </article>
+    <article class="ben-card">
+      <div class="ben-icon">04</div>
+      <div class="ben-title">Seguimiento practico</div>
+      <div class="ben-desc">Te damos orientacion para que el cuidado no termine en una sola visita y se sostenga desde casa.</div>
+    </article>
+  </div>
+</section>
+
+<section class="how sec reveal" id="como-funciona">
+  <div class="how-grid">
+    <div>
+      <div class="sec-label">Como funciona</div>
+      <h2 class="sec-title">Un proceso simple para evaluar, cuidar y orientar</h2>
+
+      <div class="how-steps">
+        <article class="step">
+          <div class="step-num">01</div>
+          <div class="step-copy">
+            <h4>Escribenos por WhatsApp</h4>
+            <p>Cuéntanos si buscas una evaluacion, tienes dudas por mal aliento o quieres revisar su salud oral.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-num">02</div>
+          <div class="step-copy">
+            <h4>Coordinamos la atencion</h4>
+            <p>Definimos la cita y te explicamos de forma simple como sera la experiencia y que esperar.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-num">03</div>
+          <div class="step-copy">
+            <h4>Evaluamos y orientamos</h4>
+            <p>Revisamos el estado oral y te indicamos el tipo de cuidado mas conveniente para tu mascota.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-num">04</div>
+          <div class="step-copy">
+            <h4>Te llevas un plan mas claro</h4>
+            <p>Sales con recomendaciones practicas para sostener el cuidado oral y mejorar su bienestar diario.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="how-visual">
+      <img src="img/kiroservicios/KIRODENT.png" alt="Kiro Dent cuidado oral para mascotas">
+      <div class="how-card">
+        <div class="mini">Higiene dental</div>
+        <strong>Preventiva y clara</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testi sec reveal" id="testimonios">
+  <div class="testi-head">
+    <div class="sec-label">Testimonios</div>
+    <h2 class="sec-title">Experiencias de familias que buscaban mas claridad y cuidado oral</h2>
+    <p>Cuando el proceso es facil de entender, la confianza cambia. Eso se refleja en la reserva, la atencion y el seguimiento.</p>
+  </div>
+
+  <div class="testi-grid">
+    <article class="t-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">Nos ayudaron a entender mejor el problema y salir con una idea clara de como seguir cuidando a nuestro perro.</p>
+      <div class="t-author">
+        <div class="t-ava">CR</div>
+        <div>
+          <div class="t-name">Carla R.</div>
+          <div class="t-sub">Evaluacion dental</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="t-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">La experiencia fue bastante cercana. Nos explicaron todo sin vueltas y eso dio mucha tranquilidad.</p>
+      <div class="t-author">
+        <div class="t-ava">MP</div>
+        <div>
+          <div class="t-name">Marco P.</div>
+          <div class="t-sub">Reserva por WhatsApp</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="t-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">Se siente un servicio responsable. No solo atienden, tambien te orientan para mantener el cuidado en casa.</p>
+      <div class="t-author">
+        <div class="t-ava">LS</div>
+        <div>
+          <div class="t-name">Lucia S.</div>
+          <div class="t-sub">Seguimiento en casa</div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="cta-sec" id="contacto">
+  <div class="cta-bg-shape"></div>
+  <div class="cta-inner">
+    <div class="cta-text">
+      <div class="sec-label">Agenda ahora</div>
+      <h2 class="cta-title">Tu mascota puede tener una boca mas sana con una atencion clara y cuidadosa</h2>
+      <p>Escribenos por WhatsApp para reservar su evaluacion, resolver dudas y empezar un cuidado oral mas ordenado y practico.</p>
+    </div>
+
+    <div class="cta-actions">
+      <a href="https://wa.me/51916566758?text=Hola%20Kiro%20Dent,%20quiero%20reservar%20mi%20evaluacion%20ahora" class="btn-wa" target="_blank" rel="noreferrer">
+        <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.07 0C5.56 0 .24 5.29.24 11.8c0 2.08.54 4.1 1.57 5.89L0 24l6.5-1.7a11.76 11.76 0 0 0 5.57 1.42h.01c6.51 0 11.83-5.29 11.83-11.8 0-3.16-1.23-6.12-3.39-8.44zM12.08 21.7h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.86 1.01 1.03-3.76-.24-.39a9.83 9.83 0 0 1-1.51-5.18c0-5.44 4.43-9.87 9.89-9.87 2.64 0 5.12 1.03 6.98 2.9a9.8 9.8 0 0 1 2.9 6.97c0 5.45-4.44 9.88-9.89 9.88zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.89-.79-1.49-1.76-1.67-2.06-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.37s-1.05 1.03-1.05 2.5 1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.13 4.54.72.31 1.28.5 1.72.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/></svg>
+        Reservar por WhatsApp
+      </a>
+      <a href="tel:+51916566758" class="btn-call">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Llamar ahora
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div class="fb-brand">
+      <a href="#inicio" class="logo">
+        <div class="logo-mark">KD</div>
+        <div class="logo-copy">
+          <div class="name">KIRODENT</div>
+          <div class="sub">Familia Kirocorp</div>
+        </div>
+      </a>
+      <p>Higiene dental preventiva y cuidado oral para mascotas. Una experiencia clara, cercana y profesional para familias que buscan mas bienestar.</p>
+      <div class="fb-contacts">
+        <a href="https://wa.me/51916566758" target="_blank" rel="noreferrer">WhatsApp: +51 916 566 758</a>
+        <a href="mailto:hola@kirocorp.pe">hola@kirocorp.pe</a>
+        <a href="tel:+51916566758">Atencion por llamada</a>
+      </div>
+    </div>
+
+    <div class="fb-col">
+      <h5>Navegacion</h5>
+      <ul>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="fb-col">
+      <h5>Servicios</h5>
+      <ul>
+        <li><a href="#servicios">Evaluacion dental</a></li>
+        <li><a href="#servicios">Higiene preventiva</a></li>
+        <li><a href="#servicios">Revision oral</a></li>
+        <li><a href="#servicios">Orientacion en casa</a></li>
+      </ul>
+    </div>
+
+    <div class="fb-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="https://wa.me/51916566758" target="_blank" rel="noreferrer">Escribir por WhatsApp</a></li>
+        <li><a href="mailto:hola@kirocorp.pe">Correo comercial</a></li>
+        <li><a href="tel:+51916566758">Llamada directa</a></li>
+      </ul>
+      <div class="footer-social" style="margin-top: 1rem;">
+        <a class="soc" href="#" aria-label="Instagram">ig</a>
+        <a class="soc" href="#" aria-label="Facebook">fb</a>
+        <a class="soc" href="https://wa.me/51916566758" target="_blank" rel="noreferrer" aria-label="WhatsApp">wa</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 KIRODENT. Todos los derechos reservados.</div>
+    <div class="footer-copy">Mas salud oral para una vida mas comoda.</div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/51916566758?text=Hola%20Kiro%20Dent,%20quiero%20hablar%20con%20ustedes" target="_blank" rel="noreferrer" aria-label="Hablar por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.07 0C5.56 0 .24 5.29.24 11.8c0 2.08.54 4.1 1.57 5.89L0 24l6.5-1.7a11.76 11.76 0 0 0 5.57 1.42h.01c6.51 0 11.83-5.29 11.83-11.8 0-3.16-1.23-6.12-3.39-8.44zM12.08 21.7h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.86 1.01 1.03-3.76-.24-.39a9.83 9.83 0 0 1-1.51-5.18c0-5.44 4.43-9.87 9.89-9.87 2.64 0 5.12 1.03 6.98 2.9a9.8 9.8 0 0 1 2.9 6.97c0 5.45-4.44 9.88-9.89 9.88zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.89-.79-1.49-1.76-1.67-2.06-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.37s-1.05 1.03-1.05 2.5 1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.13 4.54.72.31 1.28.5 1.72.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/></svg>
+</a>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+</body>
+</html>

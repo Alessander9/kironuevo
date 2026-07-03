@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Productos Snack | Kirocorp</title>
+  <meta name="description" content="Explora los snacks naturales premium de Kirocorp. Cada tarjeta enlaza a su ficha individual para comprar o pedir información por WhatsApp." />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" href="img/kirologoqueda.jpg" type="image/jpeg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@400;600&display=swap" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { display: ["Sora", "ui-sans-serif", "system-ui"] }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(255, 122, 26, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(0, 76, 151, 0.12), transparent 24%),
+        linear-gradient(180deg, #fffaf4 0%, #fffdfb 28%, #f7fbff 100%);
+    }
+
+    .snack-hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255, 122, 26, 0.16), transparent 24%),
+        radial-gradient(circle at 88% 12%, rgba(0, 76, 151, 0.14), transparent 22%),
+        linear-gradient(135deg, rgba(255, 249, 243, 0.98), rgba(255, 255, 255, 0.98) 48%, rgba(241, 247, 255, 0.96));
+    }
+
+    .snack-hero::before,
+    .snack-hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 9999px;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .snack-hero::before {
+      width: 18rem;
+      height: 18rem;
+      right: -4rem;
+      top: -2rem;
+      background: radial-gradient(circle, rgba(255, 122, 26, 0.18), transparent 70%);
+    }
+
+    .snack-hero::after {
+      width: 22rem;
+      height: 22rem;
+      left: -7rem;
+      bottom: -7rem;
+      background: radial-gradient(circle, rgba(0, 76, 151, 0.12), transparent 72%);
+    }
+
+    .snack-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.92)),
+        radial-gradient(circle at top right, rgba(255, 122, 26, 0.1), transparent 34%);
+      box-shadow: 0 28px 60px -42px rgba(15, 23, 42, 0.45);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .snack-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 122, 26, 0.24);
+      box-shadow: 0 34px 76px -44px rgba(15, 23, 42, 0.5);
+    }
+
+    .snack-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-top: 3px solid rgba(255, 122, 26, 0.95);
+      pointer-events: none;
+    }
+
+    .snack-card-image {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      object-fit: cover;
+      background: #fff;
+    }
+
+    .snack-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 9999px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 122, 26, 0.16);
+      background: rgba(255, 122, 26, 0.08);
+      color: #9a3412;
+    }
+
+    .snack-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.38rem 0.68rem;
+      border-radius: 9999px;
+      background: rgba(15, 23, 42, 0.04);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      color: #334155;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="font-display text-zinc-900 min-h-screen">
+  <nav class="sticky top-0 z-30 px-4 py-4 sm:px-6 lg:px-8">
+    <div
+      class="site-nav-shell mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 rounded-[1.75rem] border border-white/15 bg-slate-950/55 px-4 py-3 shadow-[0_20px_45px_-30px_rgba(15,23,42,0.9)] backdrop-blur-xl sm:px-5"
+      data-site-nav-shell>
+      <a href="index.html" class="site-nav-brand flex shrink-0 items-center gap-3 text-white">
+        <span class="site-nav-brand-mark inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/90 p-1">
+          <img src="img/kirologoqueda.jpg" alt="Kirocorp" class="h-full w-full rounded-xl object-cover" width="40" height="40" />
+        </span>
+        <span class="site-nav-brand-copy flex flex-col">
+          <span class="site-nav-brand-title text-base font-extrabold tracking-[0.24em] sm:text-lg">KIROCORP</span>
+          <span class="site-nav-brand-subtitle text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-white/60">Snacks naturales premium</span>
+        </span>
+      </a>
+
+      <button id="menuBtn" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú"
+        class="site-nav-toggle ml-auto inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-white transition hover:bg-white/20 md:hidden">
+        <span class="sr-only">Abrir menú</span>
+        <span class="site-nav-toggle-box" aria-hidden="true">
+          <span class="site-nav-toggle-line"></span>
+          <span class="site-nav-toggle-line"></span>
+          <span class="site-nav-toggle-line"></span>
+        </span>
+      </button>
+
+      <ul id="menu"
+        class="site-nav-menu absolute left-0 right-0 top-[calc(100%+0.85rem)] flex-col gap-4 rounded-[1.5rem] border border-white/10 bg-slate-950/92 px-6 py-5 text-white shadow-2xl backdrop-blur-xl md:static md:mt-0 md:flex md:w-auto md:flex-row md:items-center md:gap-6 md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+        <li><a href="index.html#productos" class="nav-link"><span class="material-symbols-rounded" aria-hidden="true">pets</span><span>Home</span></a></li>
+        <li><a href="productos-snack.html" class="nav-link" aria-current="page"><span class="material-symbols-rounded" aria-hidden="true">restaurant</span><span>Snacks</span></a></li>
+        <li><a href="ropa.html" class="nav-link"><span class="material-symbols-rounded" aria-hidden="true">checkroom</span><span>Ropita</span></a></li>
+        <li><a href="index.html#opiniones" class="nav-link"><span class="material-symbols-rounded" aria-hidden="true">forum</span><span>Testimonios</span></a></li>
+        <li><a href="index.html#tienda" class="nav-link"><span class="material-symbols-rounded" aria-hidden="true">call</span><span>Contacto</span></a></li>
+        <li class="site-nav-mobile-cta md:hidden">
+          <a href="https://wa.me/51916566758?text=Hola%20Kirocorp%2C%20quiero%20hacer%20un%20pedido%20con%20delivery%20GRATIS%20%F0%9F%A5%B0"
+            class="btn btn-primary w-full">
+            Comprar ahora
+          </a>
+        </li>
+      </ul>
+
+      <a href="https://wa.me/51916566758?text=Hola%20Kirocorp%2C%20quiero%20hacer%20un%20pedido%20con%20delivery%20GRATIS%20%F0%9F%A5%B0"
+        class="btn btn-primary hidden rounded-full px-5 py-3 text-sm md:inline-flex">
+        Comprar ahora
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="snack-hero relative isolate overflow-hidden">
+      <div class="mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8 lg:py-20">
+        <div class="reveal max-w-3xl space-y-8">
+          <span class="inline-flex w-fit items-center gap-2 rounded-full border border-[rgba(255,122,26,0.18)] bg-white/85 px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--brand-orange)] shadow-[0_18px_32px_-26px_rgba(15,23,42,0.35)]">
+            <span class="material-symbols-rounded text-base" aria-hidden="true">nutrition</span>
+            Snacks que sí venden
+          </span>
+
+          <div class="space-y-5">
+            <h1 class="max-w-4xl text-4xl font-black leading-[1.02] sm:text-5xl lg:text-7xl">
+              Snacks naturales pensados para gustar
+              <span class="mt-3 block text-[var(--brand-orange)]">y para comprar más fácil</span>
+            </h1>
+            <p class="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+              Reunimos los snacks premium de Kirocorp en una sola subpágina para que el cliente vea rápido, compare mejor y entre a su ficha individual con un clic.
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a href="#catalogo" class="btn btn-primary w-full rounded-full px-7 py-4 text-sm sm:w-auto">Ver catálogo</a>
+            <a href="index.html#productos" class="btn w-full rounded-full bg-[var(--brand-orange)] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[var(--brand-orange-600)] sm:w-auto">Volver al inicio</a>
+          </div>
+
+          <div class="grid gap-3 sm:grid-cols-3">
+            <article class="rounded-[1.4rem] border border-white/70 bg-white/85 p-4 shadow-[0_18px_36px_-30px_rgba(15,23,42,0.45)]">
+              <p class="text-[0.7rem] font-extrabold uppercase tracking-[0.22em] text-slate-500">Objetivo</p>
+              <p class="mt-2 text-lg font-bold text-slate-900">Más claridad de compra</p>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Cada tarjeta lleva directo a la ficha correspondiente.</p>
+            </article>
+            <article class="rounded-[1.4rem] border border-white/70 bg-white/85 p-4 shadow-[0_18px_36px_-30px_rgba(15,23,42,0.45)]">
+              <p class="text-[0.7rem] font-extrabold uppercase tracking-[0.22em] text-slate-500">Beneficio</p>
+              <p class="mt-2 text-lg font-bold text-slate-900">Compra más rápida</p>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Menos pasos, más intención de compra.</p>
+            </article>
+            <article class="rounded-[1.4rem] border border-white/70 bg-white/85 p-4 shadow-[0_18px_36px_-30px_rgba(15,23,42,0.45)]">
+              <p class="text-[0.7rem] font-extrabold uppercase tracking-[0.22em] text-slate-500">Formato</p>
+              <p class="mt-2 text-lg font-bold text-slate-900">Mobile first</p>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Pensado para navegar fácil desde el celular.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="reveal lg:justify-self-end">
+          <div class="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/90 p-5 shadow-[0_35px_80px_-38px_rgba(15,23,42,0.45)] backdrop-blur-xl sm:p-6">
+            <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[var(--brand-orange)] via-white/80 to-[var(--brand-secondary-600)]"></div>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="rounded-[1.5rem] border border-white/80 bg-[linear-gradient(180deg,rgba(255,247,239,0.96),rgba(255,255,255,0.98))] p-4">
+                <p class="text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-slate-500">Snacks top</p>
+                <p class="mt-2 text-lg font-black text-slate-900">Bofe, hígado, orejas y más</p>
+                <p class="mt-2 text-sm leading-6 text-slate-600">La selección completa con productos listos para revisar.</p>
+              </div>
+              <div class="rounded-[1.5rem] border border-white/80 bg-[linear-gradient(180deg,rgba(232,240,255,0.96),rgba(255,255,255,0.98))] p-4">
+                <p class="text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-slate-500">Acción</p>
+                <p class="mt-2 text-lg font-black text-slate-900">Cada tarjeta lleva a su ficha</p>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Ideal para comprar o resolver dudas por WhatsApp.</p>
+              </div>
+              <div class="sm:col-span-2 overflow-hidden rounded-[1.6rem] border border-slate-200 bg-slate-950/35">
+                <img src="img/kiroheader.jpg" alt="Kirocorp snacks premium" class="h-[280px] w-full object-cover sm:h-[340px]" loading="eager" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogo" class="py-10 sm:py-14">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <span class="inline-flex items-center gap-2 rounded-full bg-[rgba(255,122,26,0.1)] px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand-orange)]">
+              Catálogo de snacks
+            </span>
+            <h2 class="mt-3 text-3xl font-black text-slate-900 sm:text-4xl">Tarjetas con acceso directo a cada producto</h2>
+          </div>
+          <a href="https://wa.me/51916566758?text=Hola%20Kirocorp%2C%20quiero%20ver%20los%20snacks%20disponibles"
+            class="inline-flex w-fit items-center gap-2 rounded-full border border-[rgba(255,122,26,0.18)] bg-white px-5 py-3 text-sm font-semibold text-[var(--brand-secondary)] shadow-[0_18px_32px_-28px_rgba(15,23,42,0.35)] transition hover:-translate-y-0.5 hover:border-[rgba(255,122,26,0.3)]">
+            <span class="material-symbols-rounded text-base" aria-hidden="true">chat</span>
+            Consultar disponibilidad
+          </a>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article class="snack-card reveal rounded-[1.7rem]" data-product-card>
+            <img src="img/BOFE DE CORDERO.png" alt="Bofe de cordero" class="snack-card-image" loading="lazy" decoding="async" />
+            <div class="space-y-4 p-5" data-product-content>
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <span class="snack-badge">Snack premium</span>
+                  <h3 class="mt-3 text-xl font-black text-slate-900">Bofe de cordero</h3>
+                </div>
+                <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[rgba(255,122,26,0.1)] text-[var(--brand-orange)]">
+                  <span class="material-symbols-rounded" aria-hidden="true">star</span>
+                </span>
+              </div>
+              <p class="text-sm leading-6 text-slate-600">Snack de alta aceptación, ideal como premio de valor y para entrenamientos con más motivación.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="snack-pill">Gourmet</span>
+                <span class="snack-pill">Proteína</span>
+                <span class="snack-pill">Alta palatabilidad</span>
+              </div>
+              <div class="flex flex-col gap-3 pt-1 sm:flex-row">
+                <a href="producto-bofe-cordero.html" class="flex-1 rounded-full border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-900 transition hover:border-[rgba(255,122,26,0.25)] hover:text-[var(--brand-orange)]">Ver ficha</a>
+                <a href="https://wa.me/51916566758?text=Hola%20Kirocorp%2C%20quiero%20bofe%20de%20cordero%20Gourmett%20%F0%9F%90%95"
+                  class="flex-1 rounded-full bg-[var(--brand-orange)] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[var(--brand-orange-600)]">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="snack-card reveal rounded-[1.7rem]" data-product-card>
+            <img src="img/PATAS DESHIDRATADAS.png" alt="Colágeno natural" class="snack-card-image" loading="lazy" decoding="async" />
+            <div class="space-y-4 p-5" data-product-content>
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <span class="snack-badge">Cuidado dental</span>
+                  <h3 class="mt-3 text-xl font-black text-slate-900">Colágeno natural</h3>
+                </div>
+                <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[rgba(0,76,151,0.1)] text-[var(--brand-secondary)]">
+                  <span class="material-symbols-rounded" aria-hidden="true">dentistry</span>
+                </span>
+              </div>
+              <p class="text-sm leading-6 text-slate-600">Patas deshidratadas con textura firme, pensadas para masticación prolongada y limpieza mecánica.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="snack-pill">Colágeno</span>
+                <span class="snack-pill">Dental</span>
+                <span class="snack-pill">Masticación</span>
+              </div>
+              <div class="flex flex-col gap-3 pt-1 sm:flex-row">
+                <a href="producto-colageno.html" class="flex-1 rounded-full border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-900 transition hover:border-[rgba(255,122,26,0.25)] hover:text-[var(--brand-orange)]">Ver ficha</a>
+                <a href="https://wa.me/51916566758?text=Hola%20Kirocorp%2C%20quiero%20patas%20deshidratadas%20%28Col%C3%A1geno%20Natural%29%20%F0%9F%90%95"
+                  class="flex-1 rounded-full bg-[var(--brand-orange)] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[var(--brand-orange-600)]">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="snack-card reveal rounded-[1.7rem]" data-product-card>
+            <img src="img/HIGADO DE CORDERO.png" alt="Hígado de cordero" class="snack-card-image" loading="lazy" decoding="async" />
+            <div class="space-y-4 p-5" data-product-content>
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <span class="snack-badge">Snack gourmet</span>
+                  <h3 class="mt-3 text-xl font-black text-slate-900">Hígado de cordero</h3>
+                </div>
+                <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[rgba(255,122,26,0.1)] text-[var(--brand-orange)]">
+                  <span class="material-symbols-rounded" aria-hidden="true">nutrition</span>
+                </span>
+              </div>
+              <p class="text-sm leading-6 text-slate-600">Snack concentrado en sabor y proteína, ideal para reforzar comportamiento y premiar de forma especial.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="snack-pill">Hierro</span>
+                <span class="snack-pill">Proteína</span>
+                <span class="snack-pill">Premio premium</span>
+              </div>
+              <div class="flex flex-col gap-3 pt-1 sm:flex-row">
+                <a href="producto-higado-cordero.html" class="flex-1 rounded-full border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-900 transition hover:border-[rgba(255,122,26,0.25)] hover:text-[var(--brand-orange)]">Ver ficha</a>
+                <a href="https://wa.me/51916566758?text=Hola%20Kirocorp%2C%20quiero%20h%C3%ADgado%20de%20cordero%20Gourmett%20%F0%9F%90%95"
+                  class="flex-1 rounded-full bg-[var(--brand-orange)] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[var(--brand-orange-600)]">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="snack-card reveal rounded-[1.7rem]" data-product-card>
+            <img src="img/HIGADO DESHIDRATADO.png" alt="Hígado de pollo" class="snack-card-image" loading="lazy" decoding="async" />
+            <div class="space-y-4 p-5" data-product-content>
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <span class="snack-badge">Entrenamiento</span>
+                  <h3 class="mt-3 text-xl font-black text-slate-900">Hígado de pollo</h3>
+                </div>
+                <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[rgba(0,76,151,0.1)] text-[var(--brand-secondary)]">
+                  <span class="material-symbols-rounded" aria-hidden="true">fitness_center</span>
+                </span>
+              </div>
+              <p class="text-sm leading-6 text-slate-600">Una opción muy palatable, práctica para premios frecuentes, ejercicios y reforzamiento positivo.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="snack-pill">Hierro puro</span>
+                <span class="snack-pill">Premio frecuente</span>
+                <span class="snack-pill">Alta aceptación</span>
+              </div>
+              <div class="flex flex-col gap-3 pt-1 sm:flex-row">
+                <a href="producto-higado-pollo.html" class="flex-1 rounded-full border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-900 transition hover:border-[rgba(255,122,26,0.25)] hover:text-[var(--brand-orange)]">Ver ficha</a>
+                <a href="https://wa.me/51916566758?text=Hola%20Kirocorp%2C%20quiero%20h%C3%ADgado%20de%20pollo%20deshidratado%20%28Hierro%20Puro%29%20%F0%9F%90%95"
+                  class="flex-1 rounded-full bg-[var(--brand-orange)] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[var(--brand-orange-600)]">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="snack-card reveal rounded-[1.7rem]" data-product-card>
+            <img src="img/MOLLEJAS DESHIDRATADAS.png" alt="Mollejas deshidratadas" class="snack-card-image" loading="lazy" decoding="async" />
+            <div class="space-y-4 p-5" data-product-content>
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <span class="snack-badge">Entrenamiento</span>
+                  <h3 class="mt-3 text-xl font-black text-slate-900">Mollejas</h3>
+                </div>
+                <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[rgba(255,122,26,0.1)] text-[var(--brand-orange)]">
+                  <span class="material-symbols-rounded" aria-hidden="true">bakery_dining</span>
+                </span>
+              </div>
+              <p class="text-sm leading-6 text-slate-600">Snack natural de textura firme y sabor intenso, pensado para perros que responden bien a premios de alto valor.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="snack-pill">Proteína magra</span>
+                <span class="snack-pill">Premio alto valor</span>
+                <span class="snack-pill">Sabor intenso</span>
+              </div>
+              <div class="flex flex-col gap-3 pt-1 sm:flex-row">
+                <a href="producto-mollejas.html" class="flex-1 rounded-full border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-900 transition hover:border-[rgba(255,122,26,0.25)] hover:text-[var(--brand-orange)]">Ver ficha</a>
+                <a href="https://wa.me/51916566758?text=Hola%20Kirocorp%2C%20quiero%20mollejas%20deshidratadas%20%28Prote%C3%ADna%20Magra%29%20%F0%9F%90%95"
+                  class="flex-1 rounded-full bg-[var(--brand-orange)] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[var(--brand-orange-600)]">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="snack-card reveal rounded-[1.7rem]" data-product-card>
+            <img src="img/OREJAS DE CERDO.png" alt="Orejas de cerdo deshidratadas" class="snack-card-image" loading="lazy" decoding="async" />
+            <div class="space-y-4 p-5" data-product-content>
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <span class="snack-badge">Masticación</span>
+                  <h3 class="mt-3 text-xl font-black text-slate-900">Orejas de cerdo</h3>
+                </div>
+                <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[rgba(0,76,151,0.1)] text-[var(--brand-secondary)]">
+                  <span class="material-symbols-rounded" aria-hidden="true">mode_heat</span>
+                </span>
+              </div>
+              <p class="text-sm leading-6 text-slate-600">Snack de textura resistente que entretiene más tiempo y aporta una sensación de premio más completa.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="snack-pill">Masticación</span>
+                <span class="snack-pill">Textura resistente</span>
+                <span class="snack-pill">Gran aceptación</span>
+              </div>
+              <div class="flex flex-col gap-3 pt-1 sm:flex-row">
+                <a href="producto-orejas.html" class="flex-1 rounded-full border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-900 transition hover:border-[rgba(255,122,26,0.25)] hover:text-[var(--brand-orange)]">Ver ficha</a>
+                <a href="https://wa.me/51916566758?text=Hola%20Kirocorp%2C%20quiero%20orejas%20de%20cerdo%20deshidratadas%20%F0%9F%90%95"
+                  class="flex-1 rounded-full bg-[var(--brand-orange)] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[var(--brand-orange-600)]">Comprar</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-10 sm:py-14 pb-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-6 lg:grid-cols-3">
+          <article class="rounded-[1.7rem] border border-slate-200 bg-white/85 p-6 shadow-[0_22px_50px_-38px_rgba(15,23,42,0.35)]">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(255,122,26,0.1)] text-[var(--brand-orange)]">
+              <span class="material-symbols-rounded" aria-hidden="true">workspace_premium</span>
+            </span>
+            <h3 class="mt-4 text-xl font-black text-slate-900">Productos con foco comercial</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">La selección está pensada para mostrar valor, textura y beneficio sin saturar el mensaje.</p>
+          </article>
+          <article class="rounded-[1.7rem] border border-slate-200 bg-white/85 p-6 shadow-[0_22px_50px_-38px_rgba(15,23,42,0.35)]">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(0,76,151,0.1)] text-[var(--brand-secondary)]">
+              <span class="material-symbols-rounded" aria-hidden="true">link</span>
+            </span>
+            <h3 class="mt-4 text-xl font-black text-slate-900">Cada tarjeta conecta con su ficha</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Esto ayuda a que el usuario compare, entienda y avance a la compra sin perderse.</p>
+          </article>
+          <article class="rounded-[1.7rem] border border-slate-200 bg-white/85 p-6 shadow-[0_22px_50px_-38px_rgba(15,23,42,0.35)]">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(255,122,26,0.1)] text-[var(--brand-orange)]">
+              <span class="material-symbols-rounded" aria-hidden="true">chat</span>
+            </span>
+            <h3 class="mt-4 text-xl font-black text-slate-900">WhatsApp listo para cerrar</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Cada producto puede abrir conversación directa con un mensaje prellenado para vender mejor.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sp-footer">
+    <div class="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
+      <div class="space-y-5 gs-footer-item">
+        <div class="flex items-center gap-3">
+          <img src="img/kirologoqueda.jpg" alt="Kirocorp" class="h-14 w-14 rounded-2xl bg-white object-cover p-1" width="56" height="56" />
+          <span class="text-xl font-bold tracking-tight text-white">Kirocorp</span>
+        </div>
+        <p class="text-sm leading-relaxed text-zinc-400 max-w-sm">
+          Snacks naturales premium para perros felices. Producidos localmente con ingredientes reales, trazables y libres de conservantes artificiales.
+        </p>
+      </div>
+      <div class="gs-footer-item">
+        <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-zinc-100">Contacto Directo</h3>
+        <ul class="space-y-3 text-sm text-zinc-400">
+          <li>
+            <a class="flex items-center gap-2 transition hover:text-white" href="tel:+51916566758">
+              <span class="material-symbols-rounded text-zinc-500">phone_iphone</span> +51 916 566 758
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center gap-2 transition hover:text-white" href="mailto:hola@kirocorp.pe">
+              <span class="material-symbols-rounded text-zinc-500">mail</span> hola@kirocorp.pe
+            </a>
+          </li>
+          <li class="flex items-center gap-2 pt-2">
+            <span class="material-symbols-rounded text-green-400">local_shipping</span>
+            <span class="text-zinc-300 font-medium">Envíos a todo Lima</span>
+          </li>
+        </ul>
+      </div>
+      <div class="gs-footer-item">
+        <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-zinc-100">Enlaces</h3>
+        <ul class="space-y-3 text-sm text-zinc-400">
+          <li><a class="transition hover:text-white" href="index.html">Inicio</a></li>
+          <li><a class="transition hover:text-white" href="ropa.html">Ropita</a></li>
+          <li><a class="transition hover:text-white" href="trabajaconnosotros.html">Trabaja con nosotros</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 bg-black/40 py-6">
+      <div class="mx-auto max-w-7xl px-6 text-center text-xs text-zinc-500 lg:px-8 gs-footer-item">
+        © <span id="year"></span> Kirocorp. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
