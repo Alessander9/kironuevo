@@ -1,43 +1,43 @@
 # Kirocorp
 
-> Sitio web estático multipágina para snacks premium, ropa para mascotas y servicios de marca.
+<p align="center">
+  <img src="./assets/img/kiroheader.jpg" alt="Kirocorp portada" width="100%">
+</p>
 
-![Kirocorp Banner](./assets/img/kiroheader.jpg)
+<p align="center">
+  <strong>🐶 Snacks premium | 👕 Ropa para mascotas | 💬 Venta directa por WhatsApp</strong>
+</p>
 
-![HTML5](https://img.shields.io/badge/HTML5-Site%20Shell-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-Design%20System-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-UI%20Logic-F7DF1E?logo=javascript&logoColor=black)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-CDN%20Utilities-38B2AC?logo=tailwindcss&logoColor=white)
-![WhatsApp](https://img.shields.io/badge/WhatsApp-Lead%20Channel-25D366?logo=whatsapp&logoColor=white)
-![Static](https://img.shields.io/badge/Deployment-Static%20Hosting-6B7280)
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-Site%20Shell-E34F26?logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-Design%20System-1572B6?logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-UI%20Logic-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-CDN%20Utilities-38B2AC?logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/WhatsApp-Lead%20Channel-25D366?logo=whatsapp&logoColor=white" alt="WhatsApp">
+  <img src="https://img.shields.io/badge/Deployment-Static%20Hosting-6B7280" alt="Static">
+</p>
 
-## Contenido
+## Portada
 
-- [Resumen](#resumen)
-- [Vista rápida](#vista-rápida)
-- [Mapa visual](#mapa-visual)
-- [Estructura](#estructura)
-- [Tecnología](#tecnología)
-- [Componentes](#componentes)
-- [Automatización](#automatización)
-- [SEO y conversión](#seo-y-conversión)
-- [Mantenimiento](#mantenimiento)
-- [Referencias](#referencias)
+<table>
+  <tr>
+    <td width="50%" valign="top">
 
-## Resumen
+### Bienvenido a Kirocorp
 
-Kirocorp es una experiencia web comercial pensada para vender y convertir rápido.
-El sitio mezcla catálogo, storytelling y contacto directo por WhatsApp.
+Sitio web estático multipágina pensado para vender rápido, mostrar catálogo con estilo y llevar al usuario directo a WhatsApp.
 
-### Qué ofrece
+**En esta portada encontrarás:**
 
-- 🐶 Snacks naturales premium para mascotas.
-- 👕 Ropita para perros y gatitos.
-- 🩺 Servicios de marca como entrenamiento, spa, vet y más.
-- 💬 Contacto inmediato vía WhatsApp.
-- 📄 Catálogo PDF descargable.
+- 🧩 estructura clara del proyecto
+- 🖼️ imágenes destacadas del sitio
+- 🗺️ diagramas de navegación y automatización
+- ⚙️ tecnología y componentes principales
 
-## Vista rápida
+    </td>
+    <td width="50%" valign="top">
+
+### Vista rápida
 
 | Área | Ruta |
 |---|---|
@@ -49,6 +49,31 @@ El sitio mezcla catálogo, storytelling y contacto directo por WhatsApp.
 | Servicios | `pages/servicios/kiro*.html` |
 | Trabajo | `pages/trabajo/trabajaconnosotros.html` |
 | Docs | `docs/` |
+
+    </td>
+  </tr>
+</table>
+
+## Galería
+
+<table>
+  <tr>
+    <td width="33%">
+      <img src="./assets/img/kirologoqueda.jpg" alt="Logo Kirocorp" width="100%">
+    </td>
+    <td width="33%">
+      <img src="./assets/img/kiro11.jpg" alt="Reclutamiento" width="100%">
+    </td>
+    <td width="33%">
+      <img src="./assets/img/kiroteam3.png" alt="Equipo Kirocorp" width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Logo y marca</strong></td>
+    <td align="center"><strong>Campaña visual</strong></td>
+    <td align="center"><strong>Equipo y confianza</strong></td>
+  </tr>
+</table>
 
 ## Mapa Visual
 
@@ -83,6 +108,18 @@ sequenceDiagram
   S->>W: Abre enlace wa.me con texto listo
   W-->>U: Chat preparado para enviar
 ```
+
+## Resumen
+
+Kirocorp es una experiencia web comercial pensada para vender y convertir rápido. El sitio mezcla catálogo, storytelling y contacto directo por WhatsApp.
+
+### Qué ofrece
+
+- 🐶 Snacks naturales premium para mascotas.
+- 👕 Ropita para perros y gatitos.
+- 🩺 Servicios de marca como entrenamiento, spa, vet y más.
+- 💬 Contacto inmediato vía WhatsApp.
+- 📄 Catálogo PDF descargable.
 
 ## Estructura
 
@@ -214,6 +251,7 @@ Conviene revisar siempre:
 | [`assets/img/kirologoqueda.jpg`](./assets/img/kirologoqueda.jpg) | Logo principal |
 | [`assets/img/kiroheader.jpg`](./assets/img/kiroheader.jpg) | Imagen hero |
 | [`assets/img/kiro11.jpg`](./assets/img/kiro11.jpg) | Reclutamiento |
+| [`assets/img/kiroteam3.png`](./assets/img/kiroteam3.png) | Imagen de equipo |
 
 ## Mantenimiento
 
@@ -247,8 +285,3 @@ Conviene revisar siempre:
 - [`styles/style.css`](./styles/style.css)
 - [`scripts/script.js`](./scripts/script.js)
 - [`generate-ropa-pages.js`](./generate-ropa-pages.js)
-
----
-
-Kirocorp está pensado para vender con claridad visual, poco ruido y mucho foco en conversión.
-Si ampliamos el proyecto, lo ideal es mantener esta documentación viva y alineada con la estructura real.
