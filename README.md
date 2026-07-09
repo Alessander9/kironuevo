@@ -1,5 +1,9 @@
 # Kirocorp
 
+<p align="center">
+  <img src="./assets/img/kiroheader.jpg" alt="Kirocorp hero banner" width="100%">
+</p>
+
 <p align="center"><em>Brand experience editorial para snacks premium, ropa para mascotas y contacto directo por WhatsApp.</em></p>
 
 <table>
@@ -28,10 +32,6 @@
 
     </td>
     <td width="40%" valign="top">
-
-<p align="center">
-  <img src="./assets/img/kiroheader.jpg" alt="Kirocorp portada" width="100%">
-</p>
 
 <p align="center">
   <strong>Snacks premium · Ropa para mascotas · Venta directa por WhatsApp</strong>
