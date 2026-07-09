@@ -1,5 +1,39 @@
 # Kirocorp
 
+<p align="center"><em>Brand experience editorial para snacks premium, ropa para mascotas y contacto directo por WhatsApp.</em></p>
+
+<table>
+  <tr>
+    <td width="58%" valign="top">
+
+## Portada
+
+**Kirocorp** es una experiencia web comercial diseñada para mostrar catálogo, contar marca y convertir con rapidez.
+
+<p>
+  <img src="https://img.shields.io/badge/HTML5-Site%20Shell-E34F26?logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-Design%20System-1572B6?logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-UI%20Logic-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-CDN%20Utilities-38B2AC?logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/WhatsApp-Lead%20Channel-25D366?logo=whatsapp&logoColor=white" alt="WhatsApp">
+  <img src="https://img.shields.io/badge/Deployment-Static%20Hosting-6B7280" alt="Static">
+  <img src="https://img.shields.io/badge/SEO-Ready-0EA5E9" alt="SEO">
+  <img src="https://img.shields.io/badge/Design-Mobile%20First-111827" alt="Mobile First">
+</p>
+
+<p>
+  <a href="#resumen"><img src="https://img.shields.io/badge/Leer%20resumen-111827?style=for-the-badge" alt="Resumen"></a>
+  <a href="#galería"><img src="https://img.shields.io/badge/Ver%20galería-374151?style=for-the-badge" alt="Galería"></a>
+  <a href="#mapa-visual"><img src="https://img.shields.io/badge/Ver%20diagramas-4B5563?style=for-the-badge" alt="Diagramas"></a>
+  <a href="#estructura"><img src="https://img.shields.io/badge/Ir%20a%20estructura-6B7280?style=for-the-badge" alt="Estructura"></a>
+</p>
+
+    </td>
+    <td width="42%" valign="top">
+
 <p align="center">
   <img src="./assets/img/kiroheader.jpg" alt="Kirocorp portada" width="100%">
 </p>
@@ -8,26 +42,35 @@
   <strong>🐶 Snacks premium | 👕 Ropa para mascotas | 💬 Venta directa por WhatsApp</strong>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/HTML5-Site%20Shell-E34F26?logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-Design%20System-1572B6?logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/JavaScript-UI%20Logic-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Tailwind%20CSS-CDN%20Utilities-38B2AC?logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
-  <img src="https://img.shields.io/badge/WhatsApp-Lead%20Channel-25D366?logo=whatsapp&logoColor=white" alt="WhatsApp">
-  <img src="https://img.shields.io/badge/Deployment-Static%20Hosting-6B7280" alt="Static">
-</p>
+    </td>
+  </tr>
+</table>
 
-## Portada
+## Índice
+
+<p>
+  <a href="#portada"><img src="https://img.shields.io/badge/Portada-111827?style=for-the-badge" alt="Portada"></a>
+  <a href="#galería"><img src="https://img.shields.io/badge/Galería-1F2937?style=for-the-badge" alt="Galería"></a>
+  <a href="#mapa-visual"><img src="https://img.shields.io/badge/Mapa%20visual-374151?style=for-the-badge" alt="Mapa Visual"></a>
+  <a href="#resumen"><img src="https://img.shields.io/badge/Resumen-4B5563?style=for-the-badge" alt="Resumen"></a>
+  <a href="#estructura"><img src="https://img.shields.io/badge/Estructura-6B7280?style=for-the-badge" alt="Estructura"></a>
+  <a href="#tecnología"><img src="https://img.shields.io/badge/Tecnología-7C3AED?style=for-the-badge" alt="Tecnología"></a>
+  <a href="#componentes"><img src="https://img.shields.io/badge/Componentes-0F766E?style=for-the-badge" alt="Componentes"></a>
+  <a href="#automatización"><img src="https://img.shields.io/badge/Automatización-0EA5E9?style=for-the-badge" alt="Automatización"></a>
+  <a href="#seo-y-conversión"><img src="https://img.shields.io/badge/SEO%20y%20conversión-F97316?style=for-the-badge" alt="SEO y conversión"></a>
+  <a href="#mantenimiento"><img src="https://img.shields.io/badge/Mantenimiento-334155?style=for-the-badge" alt="Mantenimiento"></a>
+  <a href="#referencias"><img src="https://img.shields.io/badge/Referencias-111827?style=for-the-badge" alt="Referencias"></a>
+</p>
 
 <table>
   <tr>
     <td width="50%" valign="top">
 
-### Bienvenido a Kirocorp
+### Dirección creativa
 
 Sitio web estático multipágina pensado para vender rápido, mostrar catálogo con estilo y llevar al usuario directo a WhatsApp.
 
-**En esta portada encontrarás:**
+**La portada reúne:**
 
 - 🧩 estructura clara del proyecto
 - 🖼️ imágenes destacadas del sitio
